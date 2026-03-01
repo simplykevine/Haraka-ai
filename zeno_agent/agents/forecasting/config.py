@@ -7,6 +7,8 @@ if not GOOGLE_API_KEY:
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
+GENERATION_MODEL = "models/gemini-2.5-flash"
+
 EXCHANGE_RATES = {
     "KES": 0.0075,
     "ETB": 0.0087,

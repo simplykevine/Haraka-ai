@@ -1,7 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
-from typing import Tuple, List, Any
+from typing import Tuple
 from .config import EXCHANGE_RATES
 from zeno_agent.db_utils import (
     get_country_id_by_name,
@@ -30,12 +30,19 @@ def prepare_dual_data(country_id: int, product_id: int) -> Tuple[pd.DataFrame, s
         raise ValueError("Both quantity and price columns required.")
 
     df["ds"] = pd.to_datetime(df["date"])
-    currency = df.get("currency", pd.Series(["KES"])).iloc[0] or "KES"
+    currency = df["currency"].iloc[0] if "currency" in df.columns and not df["currency"].empty else "KES"
 
-    unit_name = df.get("quantity_unit_name", pd.Series(["tonnes"])).iloc[0]
-    unit_symbol = df.get("quantity_unit_symbol", pd.Series(["t"])).iloc[0]
+    if "quantity_unit_name" in df.columns:
+        unit_name = df["quantity_unit_name"].iloc[0] or "tonnes"
+    else:
+        unit_name = "tonnes"
 
-    unit_str = f"{unit_name or ''} {unit_symbol or ''}".lower()
+    if "quantity_unit_symbol" in df.columns:
+        unit_symbol = df["quantity_unit_symbol"].iloc[0] or "t"
+    else:
+        unit_symbol = "t"
+
+    unit_str = f"{unit_name} {unit_symbol}".lower()
     if "ton" in unit_str or unit_symbol == "t":
         kg_multiplier = 1000
         display_unit = "tonnes"

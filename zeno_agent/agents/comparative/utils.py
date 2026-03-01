@@ -2,15 +2,15 @@ import os
 from google import genai
 from typing import List, Dict, Any
 
-
 from zeno_agent.embedding_utils import encode_query_to_vector
 
-# CONFIG
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
     raise EnvironmentError("GOOGLE_API_KEY environment variable is not set.")
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
+
+GENERATION_MODEL = "models/gemini-2.5-flash"
 
 
 def extract_entities(query: str) -> Dict[str, Any]:

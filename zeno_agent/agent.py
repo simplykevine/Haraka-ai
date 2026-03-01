@@ -19,8 +19,9 @@ if not GOOGLE_API_KEY:
     raise EnvironmentError("GOOGLE_API_KEY environment variable is not set.")
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
+GENERATION_MODEL = "models/gemini-2.5-flash"
 
-# ── Custom JSONResponse handles Decimal types from DB ───────────────────────
+
 class JSONResponse(_BaseJSONResponse):
     def render(self, content) -> bytes:
         def default_serializer(obj):
@@ -37,7 +38,46 @@ class JSONResponse(_BaseJSONResponse):
         ).encode("utf-8")
 
 
-# ── App ──────────────────────────────────────────────────────────────────────
+def normalize_response(result: dict) -> dict:
+    """
+    Ensures every response has a `final_output` field that the frontend reads.
+    Also preserves all original fields for artifact rendering.
+    """
+    if result.get("final_output"):
+        return result
+
+    query_type = result.get("type", "rag")
+
+    if query_type == "scenario":
+        text = result.get("llm_analysis", "")
+
+    elif query_type == "comparative":
+        text = result.get("response", result.get("llm_analysis", ""))
+
+    elif query_type == "forecast":
+        parts = []
+        if result.get("forecast_display"):
+            parts.append(result["forecast_display"])
+        if result.get("interpretation"):
+            parts.append(result["interpretation"])
+        text = "\n\n".join(parts) if parts else ""
+
+    elif query_type in ("rag", "trivial", "file_analysis"):
+        text = result.get("response", result.get("llm_analysis", ""))
+
+    else:
+        text = (
+            result.get("response")
+            or result.get("llm_analysis")
+            or result.get("interpretation")
+            or result.get("forecast_display")
+            or ""
+        )
+
+    result["final_output"] = text or "Dr. Zeno could not generate a response. Please try again."
+    return result
+
+
 app = FastAPI()
 
 app.add_middleware(
@@ -49,7 +89,6 @@ app.add_middleware(
 )
 
 
-# ── Economist Dashboard Data Endpoint ────────────────────────────────────────
 @app.get("/dashboard/economist")
 def get_economist_dashboard():
     return JSONResponse({
@@ -98,7 +137,6 @@ def get_economist_dashboard():
     })
 
 
-# ── Economist AI Prompts ─────────────────────────────────────────────────────
 ECONOMIST_PROMPTS = {
     "supply_gap": """You are Dr. Zeno, Senior Economist at the East African Trade Institute.
 Dashboard context: Maize Supply=[120000,105000,98000,115000 tons], Consumption=[130000,132000,135000,128000 tons] for March-June 2026.
@@ -155,7 +193,6 @@ Under 200 words. Output analysis only.""",
 }
 
 
-# ── Economist AI Analysis Endpoint ──────────────────────────────────────────
 @app.post("/dashboard/economist/analyze")
 async def economist_analyze(request: Request):
     data = await request.json()
@@ -167,12 +204,9 @@ async def economist_analyze(request: Request):
 
     try:
         result = client.models.generate_content(
-            model="gemini-flash-latest",
+            model=GENERATION_MODEL,
             contents=[{"parts": [{"text": prompt}]}],
-            config={
-                "max_output_tokens": 2048,
-                "temperature": 0.2
-            }
+            config={"max_output_tokens": 2048, "temperature": 0.2}
         )
         if result.candidates and result.candidates[0].content.parts:
             analysis = result.candidates[0].content.parts[0].text.strip()
@@ -193,7 +227,6 @@ async def economist_analyze(request: Request):
         return JSONResponse({"error": f"Analysis failed: {str(e)}"}, status_code=500)
 
 
-# ── Hardcoded forecast helpers ───────────────────────────────────────────────
 def is_ethiopia_coffee_forecast_query(query: str) -> bool:
     pattern = re.compile(
         r".*price.*ethiopia.*coffee.*next.*[12].*year[s]?.*|"
@@ -217,7 +250,6 @@ def generate_ethiopia_coffee_response() -> dict:
         "$2 billion in the first ten months of the fiscal year (July 2024-June 2025), marking a 38% "
         "increase year-over-year."
     )
-
     forecast_display = (
         "In 2025, export prices are forecasted to average 380 U.S. cents per pound (range: 350-423 cents), "
         "supported by tight global Arabica supplies and strong demand for Ethiopian heirloom varieties. "
@@ -242,7 +274,7 @@ def generate_ethiopia_coffee_response() -> dict:
         "title": "Ethiopia Coffee Export Volume Forecast (Million 60-kg Bags)",
         "chart_type": "bar"
     }
-    return {
+    result = {
         "type": "forecast",
         "interpretation": interpretation,
         "forecast_display": forecast_display,
@@ -250,6 +282,7 @@ def generate_ethiopia_coffee_response() -> dict:
         "data_points_used": 12,
         "artifacts": [price_chart, volume_chart]
     }
+    return normalize_response(result)
 
 
 def is_kenya_coffee_forecast_query(query: str) -> bool:
@@ -272,7 +305,6 @@ def generate_kenya_coffee_response() -> dict:
         "harvest (October-March) is underway, with export volumes projected to rise 3-5% y/y despite "
         "input cost pressures and EUDR compliance challenges."
     )
-
     forecast_display = (
         "December 2025: Average auction price forecasted at US$395 per 50 kg bag (US$7.90/kg), with a "
         "range of US$360-430 depending on weekly volumes and global futures momentum.\n\n"
@@ -289,38 +321,27 @@ def generate_kenya_coffee_response() -> dict:
         "title": "NCE Weekly Auction Volume (Thousand 50kg bags)",
         "chart_type": "bar"
     }
-    return {
+    result = {
         "type": "forecast",
         "interpretation": interpretation,
         "forecast_display": forecast_display,
         "confidence_level": "High",
         "data_points_used": 15,
-        "forecast_methodology": (
-            "Blended econometric model using ICO supply-demand balances, ICE Arabica futures, NCE auction "
-            "data, and weather-adjusted yield projections. Kenyan premium derived from 2023-2025 regression "
-            "(R2 = 0.92 vs. global milds)."
-        ),
         "artifacts": [volume_chart]
     }
+    return normalize_response(result)
 
 
-# ── NEW: Kenya Maize Forecast Helpers ────────────────────────────────────────
 def is_kenya_maize_forecast_query(query: str) -> bool:
-    """Match Kenya maize forecast queries with flexible word order."""
     query_lower = query.lower()
-    
-    # Check for key terms (order doesn't matter)
     has_kenya = any(word in query_lower for word in ["kenya", "kenyan", "nairobi", "nce", "ncpb"])
     has_maize = any(word in query_lower for word in ["maize", "corn", "grain", "meal", "unga"])
     has_forecast = any(word in query_lower for word in ["forecast", "predict", "price", "next", "202", "year", "month", "future"])
     has_timeframe = any(word in query_lower for word in ["next", "202", "2025", "2026", "2027", "year", "month", "future", "coming"])
-    
     return has_kenya and has_maize and has_forecast and has_timeframe
 
 
 def generate_kenya_maize_response() -> dict:
-    """response for Kenya maize price forecasts with data."""
-    
     interpretation = (
         "Kenya's maize market is the cornerstone of national food security, with over 90% of the population "
         "depending on maize as a staple food. The sector employs approximately 2.5 million smallholder farmers "
@@ -330,72 +351,20 @@ def generate_kenya_maize_response() -> dict:
         "2025 long rains harvest (March-June) yielded approximately 4.2 million metric tons, representing a "
         "12% increase from the previous year due to favorable weather conditions and expanded acreage. "
         "However, elevated input costs (fertilizer up 35% y/y) and logistics challenges continue to pressure "
-        "farm gate margins. The government has maintained a strategic reserve of 400,000 metric tons to "
-        "stabilize prices during lean seasons."
+        "farm gate margins."
     )
-
     forecast_display = (
-        "**December 2025:** Average retail price forecasted at **KSh 5,150 per 90kg bag** (range: KSh 4,850-5,450), "
-        "driven by short-season harvest arrivals from Eastern Kenya and reduced import volumes from Tanzania. "
-        "NCPB procurement activities are expected to support farm gate prices at KSh 3,800-4,000 per 90kg bag.\n\n"
-        "**January 2026:** Prices expected to moderate to **KSh 4,950 per 90kg bag** (range: KSh 4,650-5,250) as "
-        "main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets. However, "
-        "elevated fertilizer costs (KSh 7,500 per 50kg bag) and transport expenses (fuel at KSh 185/liter) will "
-        "keep prices approximately 18% above the 5-year average. Regional arbitrage opportunities exist with "
-        "Tanzania (KSh 4,200/bag) and Uganda (KSh 3,900/bag), but import levies of KSh 650/bag limit competitiveness.\n\n"
-        "**Forecast Methodology:** Aggregated from NCPB weekly price bulletins (48 weeks), Kenya National Bureau "
-        "of Statistics (KNBS) Consumer Price Index reports, and regional trade flow data from COMESA Secretariat. "
-        "Model incorporates seasonal harvest patterns (R² = 0.89), government subsidy program impacts, and "
-        "El Niño weather risk adjustments. Confidence interval: ±8% based on 36-month historical volatility analysis."
+        "December 2025: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\n"
+        "January 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as "
+        "main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets."
     )
-    
-    # ✅ Price Chart Data
     price_chart = {
         "x": ["Nov 2025", "Dec 2025", "Jan 2026"],
         "y": [5350, 5150, 4950],
         "title": "Kenya Maize Retail Price Forecast (KSh per 90kg Bag)",
-        "chart_type": "line",
-        "y_label": "Price (KSh)",
-        "annotations": [
-            {"x": "Dec 2025", "y": 5150, "text": "Short-season harvest"},
-            {"x": "Jan 2026", "y": 4950, "text": "Main harvest arrives"}
-        ]
+        "chart_type": "line"
     }
-    
-    # ✅ Supply-Demand Chart Data
-    supply_demand_chart = {
-        "x": ["Nov 2025", "Dec 2025", "Jan 2026"],
-        "supply": [380000, 420000, 510000],
-        "demand": [450000, 455000, 460000],
-        "title": "Kenya Maize Supply vs Demand (Metric Tons)",
-        "chart_type": "bar"
-    }
-    
-    # ✅ Regional Price Comparison
-    regional_comparison = {
-        "regions": [
-            {"name": "Nairobi", "price": 5150, "change_pct": -2.5},
-            {"name": "Mombasa", "price": 5450, "change_pct": -1.8},
-            {"name": "Kisumu", "price": 4850, "change_pct": -3.2},
-            {"name": "Eldoret", "price": 4200, "change_pct": -4.1},
-            {"name": "Nakuru", "price": 4650, "change_pct": -3.5}
-        ],
-        "title": "Regional Price Variation (KSh per 90kg Bag)"
-    }
-    
-    # ✅ Key Indicators
-    key_indicators = {
-        "ncpb_reserve": "400,000 MT",
-        "fertilizer_price": "KSh 7,500 / 50kg",
-        "fuel_price": "KSh 185 / liter",
-        "import_levy": "KSh 650 / bag",
-        "farm_gate_price": "KSh 3,800-4,000 / 90kg",
-        "production_2025": "4.2 million MT",
-        "consumption_annual": "5.4 million MT",
-        "deficit_gap": "1.2 million MT"
-    }
-    
-    return {
+    result = {
         "type": "forecast",
         "commodity": "Maize",
         "country": "Kenya",
@@ -403,47 +372,24 @@ def generate_kenya_maize_response() -> dict:
         "forecast_display": forecast_display,
         "confidence_level": "High",
         "data_points_used": 48,
-        "forecast_methodology": (
-            "Multi-factor econometric model incorporating: (1) NCPB weekly procurement and release data, "
-            "(2) KNBS monthly CPI and producer price indices, (3) Regional trade flows from Tanzania and "
-            "Uganda border posts, (4) Weather-adjusted yield projections from Kenya Meteorological Department, "
-            "(5) Input cost tracking (fertilizer, fuel, seeds). Model validated against 36-month historical "
-            "data with MAPE of 6.2%. El Niño risk premium of +5% applied for Q1 2026."
-        ),
-        "risk_factors": [
-            "El Niño weather patterns may affect short-rains harvest (Oct-Dec 2025)",
-            "Regional trade policy changes in Tanzania could limit import availability",
-            "Fuel price volatility may increase transport costs by 10-15%",
-            "Government subsidy program continuity beyond March 2026 uncertain"
-        ],
-        "artifacts": [price_chart, supply_demand_chart, regional_comparison],
-        "key_indicators": key_indicators,
-        "last_updated": "2025-11-30",
-        "next_update": "2025-12-15"
+        "artifacts": [price_chart]
     }
+    return normalize_response(result)
 
 
-# ── Query Router ─────────────────────────────────────────────────────────────
 def route_and_reason(user_query: str) -> dict:
-    """
-    ✅ FIXED: Always returns a dict, NEVER returns JSONResponse
-    """
     if is_ethiopia_coffee_forecast_query(user_query):
         return {"type": "ethiopia_coffee_forecast", "response": ""}
-    
     if is_kenya_coffee_forecast_query(user_query):
         return {"type": "kenya_coffee_forecast", "response": ""}
-    
-    # ✅ FIXED: Return dict instead of JSONResponse
     if is_kenya_maize_forecast_query(user_query):
         return {"type": "kenya_maize_forecast", "response": ""}
-    
+
     prompt = f"""
 You are Zeno, an AI Economist Assistant specializing in East African agricultural trade data.
 Your task:
 1. Analyze the user's query.
-2. If it is a greeting, small talk, or simple factual question unrelated to trade data (e.g., "Hello", "What is the date today?"),
-answer it naturally.
+2. If it is a greeting, small talk, or simple factual question unrelated to trade data, answer it naturally.
 3. If it is about comparing countries/commodities → indicate [COMPARATIVE] at the start of your response.
 4. If it is asking for a forecast or prediction → indicate [FORECAST].
 5. If it is a hypothetical or what-if scenario → indicate [SCENARIO].
@@ -453,7 +399,7 @@ Query: "{user_query}"
 """
     try:
         result = client.models.generate_content(
-            model="gemini-flash-latest",
+            model=GENERATION_MODEL,
             contents=[{"parts": [{"text": prompt}]}]
         )
         if result.candidates and result.candidates[0].content.parts:
@@ -479,7 +425,8 @@ Query: "{user_query}"
             "export", "import", "price", "trade", "coffee", "maize",
             "tanzania", "kenya", "forecast", "compare", "supply", "gap",
             "collision", "arbitrage", "logistics", "rainfall", "harvest",
-            "farm gate", "simulate", "policy", "shock"
+            "farm gate", "simulate", "policy", "shock", "tariff", "effect",
+            "impact", "economy", "gdp", "inflation", "currency", "dollar"
         }
         if len(query.split()) <= 6 and not any(kw in query for kw in trade_keywords):
             return {
@@ -489,7 +436,6 @@ Query: "{user_query}"
         return {"type": "rag", "response": ""}
 
 
-# ── Main Query Endpoint ──────────────────────────────────────────────────────
 @app.post("/query")
 async def query(request: Request):
     try:
@@ -500,31 +446,28 @@ async def query(request: Request):
         if not user_query and not file_context:
             return JSONResponse({"error": "Query or file is required"}, status_code=400)
 
-        # Hardcoded forecast shortcuts - return JSONResponse here, not in route_and_reason
+        # ── Hardcoded forecast handlers ─────────────────────────────────────
         if is_ethiopia_coffee_forecast_query(user_query):
             return JSONResponse(generate_ethiopia_coffee_response())
 
         if is_kenya_coffee_forecast_query(user_query):
             return JSONResponse(generate_kenya_coffee_response())
 
-        # ✅ NEW: Kenya maize forecast shortcut
         if is_kenya_maize_forecast_query(user_query):
             return JSONResponse(generate_kenya_maize_response())
 
-        # File uploaded with no query
+        # ── File only — no query ────────────────────────────────────────────
         if file_context and not user_query:
             prompt = f"""
 You are Dr. Zeno, Senior Economist. A user uploaded a document but didn't ask a specific question.
-Your primary role is to ensure the user gets value from their uploaded file.
-Document Context (includes filename and content):
-{file_context}
+Document Context: {file_context}
 Instructions:
-1. Provide a brief, professional 1-2 sentence summary of the main topic or data presented in the uploaded documents.
-2. Suggest 3 specific, actionable economic questions based on the document content that an economist would be interested in.
+1. Provide a brief 1-2 sentence summary of the main topic or data in the document.
+2. Suggest 3 specific, actionable economic questions based on the document content.
 """
             try:
                 response = client.models.generate_content(
-                    model="gemini-flash-latest",
+                    model=GENERATION_MODEL,
                     contents=[{"parts": [{"text": prompt}]}]
                 )
                 if response.candidates and response.candidates[0].content.parts:
@@ -534,25 +477,27 @@ Instructions:
             except Exception:
                 analysis = "I analyzed your document. Try asking about trade implications, price forecasts, or policy impacts."
 
-            return JSONResponse({
+            result = {
                 "type": "file_analysis",
                 "response": analysis,
                 "followup": "Ask one of the suggested questions!"
-            })
+            }
+            return JSONResponse(normalize_response(result))
 
-        # Route the query
+        # ── Route query ─────────────────────────────────────────────────────
         routed = route_and_reason(user_query)
-        query_type = routed.get("type", "rag")  # ✅ Now works because routed is always a dict
+        query_type = routed.get("type", "rag")
 
         if query_type == "trivial":
-            return JSONResponse({"type": "trivial", "response": routed["response"]})
+            result = {"type": "trivial", "response": routed["response"]}
+            return JSONResponse(normalize_response(result))
 
         elif query_type == "comparative":
             result = comparative_agent.run({
                 "query": user_query,
                 "file_context": file_context
             })
-            return JSONResponse(result)
+            return JSONResponse(normalize_response(result))
 
         elif query_type == "forecast":
             try:
@@ -561,38 +506,38 @@ Instructions:
                     "query": user_query,
                     "file_context": file_context
                 })
-                return JSONResponse({"type": "forecast", **result})
+                result["type"] = "forecast"
+                return JSONResponse(normalize_response(result))
             except ValueError as e:
                 if "No trade data found" in str(e):
-                    return JSONResponse({
+                    result = {
                         "type": "forecast",
-                        "final_output": "No response found. Please try rephrasing your question or check back later.",
-                        "status": "completed"
-                    })
+                        "response": "No trade data found for this commodity and country. Try a different query."
+                    }
+                    return JSONResponse(normalize_response(result))
                 raise
 
         elif query_type == "scenario":
             result = ScenarioSubAgent().handle_with_context(user_query, file_context)
-            return JSONResponse({"type": "scenario", **result})
+            result["type"] = "scenario"
+            return JSONResponse(normalize_response(result))
 
         else:
             base_response = ask_knowledgebase_with_context(user_query, file_context)
-            return JSONResponse({"type": "rag", "response": base_response})
+            result = {"type": "rag", "response": base_response}
+            return JSONResponse(normalize_response(result))
 
-    # ✅ FIXED: Use correct exception class for google.genai
     except Exception as e:
         error_str = str(e)
         if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "quota" in error_str.lower():
             return JSONResponse({
-                "error": "No response found. The system is temporarily busy. Please try again later.",
-                "type": "quota_exceeded"
+                "type": "quota_exceeded",
+                "final_output": "The system is temporarily busy due to high demand. Please try again in a moment.",
             })
-        
         print("ERROR in /query:", traceback.format_exc())
         return JSONResponse({"error": f"Processing failed: {str(e)}"}, status_code=500)
 
 
-# ── Health Check ─────────────────────────────────────────────────────────────
 @app.get("/healthz")
 def health():
     return {"status": "ok"}
