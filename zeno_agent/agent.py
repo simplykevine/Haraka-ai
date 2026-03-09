@@ -1,9 +1,11 @@
 import os
 import re
+import hashlib
+import json
+import time
+from decimal import Decimal
 from dotenv import load_dotenv
 load_dotenv()
-import json
-from decimal import Decimal
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse as _BaseJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,6 +22,58 @@ if not GOOGLE_API_KEY:
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
 GENERATION_MODEL = "models/gemini-2.5-flash"
+
+CACHE_FILE = os.path.join(os.path.dirname(__file__), "query_cache.json")
+CACHE_TTL_SECONDS = 60 * 60 * 24 * 7
+
+
+def load_cache() -> dict:
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def save_cache(cache: dict):
+    try:
+        with open(CACHE_FILE, "w") as f:
+            json.dump(cache, f, indent=2)
+    except Exception as e:
+        print(f"[Cache] Failed to save: {e}")
+
+
+def make_cache_key(query: str, file_context: str = "") -> str:
+    raw = f"{query.strip().lower()}|{file_context.strip().lower()}"
+    return hashlib.md5(raw.encode()).hexdigest()
+
+
+def get_from_cache(query: str, file_context: str = "") -> dict | None:
+    cache = load_cache()
+    key = make_cache_key(query, file_context)
+    entry = cache.get(key)
+    if not entry:
+        return None
+    age = time.time() - entry.get("cached_at", 0)
+    if age > CACHE_TTL_SECONDS:
+        print(f"[Cache] EXPIRED for: {query[:60]}")
+        return None
+    print(f"[Cache] HIT for: {query[:60]}")
+    return entry["result"]
+
+
+def set_in_cache(query: str, result: dict, file_context: str = ""):
+    cache = load_cache()
+    key = make_cache_key(query, file_context)
+    cache[key] = {
+        "query": query[:200],
+        "cached_at": time.time(),
+        "result": result
+    }
+    save_cache(cache)
+    print(f"[Cache] SAVED for: {query[:60]}")
 
 
 class JSONResponse(_BaseJSONResponse):
@@ -39,10 +93,6 @@ class JSONResponse(_BaseJSONResponse):
 
 
 def normalize_response(result: dict) -> dict:
-    """
-    Ensures every response has a `final_output` field that the frontend reads.
-    Also preserves all original fields for artifact rendering.
-    """
     if result.get("final_output"):
         return result
 
@@ -50,10 +100,8 @@ def normalize_response(result: dict) -> dict:
 
     if query_type == "scenario":
         text = result.get("llm_analysis", "")
-
     elif query_type == "comparative":
         text = result.get("response", result.get("llm_analysis", ""))
-
     elif query_type == "forecast":
         parts = []
         if result.get("forecast_display"):
@@ -61,10 +109,8 @@ def normalize_response(result: dict) -> dict:
         if result.get("interpretation"):
             parts.append(result["interpretation"])
         text = "\n\n".join(parts) if parts else ""
-
     elif query_type in ("rag", "trivial", "file_analysis"):
         text = result.get("response", result.get("llm_analysis", ""))
-
     else:
         text = (
             result.get("response")
@@ -446,15 +492,27 @@ async def query(request: Request):
         if not user_query and not file_context:
             return JSONResponse({"error": "Query or file is required"}, status_code=400)
 
+        # ── Cache check — return immediately if seen before ─────────────────
+        cached = get_from_cache(user_query, file_context)
+        if cached:
+            cached["_from_cache"] = True
+            return JSONResponse(cached)
+
         # ── Hardcoded forecast handlers ─────────────────────────────────────
         if is_ethiopia_coffee_forecast_query(user_query):
-            return JSONResponse(generate_ethiopia_coffee_response())
+            result = generate_ethiopia_coffee_response()
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         if is_kenya_coffee_forecast_query(user_query):
-            return JSONResponse(generate_kenya_coffee_response())
+            result = generate_kenya_coffee_response()
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         if is_kenya_maize_forecast_query(user_query):
-            return JSONResponse(generate_kenya_maize_response())
+            result = generate_kenya_maize_response()
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         # ── File only — no query ────────────────────────────────────────────
         if file_context and not user_query:
@@ -477,27 +535,30 @@ Instructions:
             except Exception:
                 analysis = "I analyzed your document. Try asking about trade implications, price forecasts, or policy impacts."
 
-            result = {
+            result = normalize_response({
                 "type": "file_analysis",
                 "response": analysis,
                 "followup": "Ask one of the suggested questions!"
-            }
-            return JSONResponse(normalize_response(result))
+            })
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         # ── Route query ─────────────────────────────────────────────────────
         routed = route_and_reason(user_query)
         query_type = routed.get("type", "rag")
 
         if query_type == "trivial":
-            result = {"type": "trivial", "response": routed["response"]}
-            return JSONResponse(normalize_response(result))
+            result = normalize_response({"type": "trivial", "response": routed["response"]})
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         elif query_type == "comparative":
-            result = comparative_agent.run({
+            result = normalize_response(comparative_agent.run({
                 "query": user_query,
                 "file_context": file_context
-            })
-            return JSONResponse(normalize_response(result))
+            }))
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         elif query_type == "forecast":
             try:
@@ -507,25 +568,29 @@ Instructions:
                     "file_context": file_context
                 })
                 result["type"] = "forecast"
-                return JSONResponse(normalize_response(result))
+                result = normalize_response(result)
+                set_in_cache(user_query, result, file_context)
+                return JSONResponse(result)
             except ValueError as e:
                 if "No trade data found" in str(e):
-                    result = {
+                    result = normalize_response({
                         "type": "forecast",
                         "response": "No trade data found for this commodity and country. Try a different query."
-                    }
-                    return JSONResponse(normalize_response(result))
+                    })
+                    return JSONResponse(result)
                 raise
 
         elif query_type == "scenario":
-            result = ScenarioSubAgent().handle_with_context(user_query, file_context)
+            result = normalize_response(ScenarioSubAgent().handle_with_context(user_query, file_context))
             result["type"] = "scenario"
-            return JSONResponse(normalize_response(result))
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
         else:
             base_response = ask_knowledgebase_with_context(user_query, file_context)
-            result = {"type": "rag", "response": base_response}
-            return JSONResponse(normalize_response(result))
+            result = normalize_response({"type": "rag", "response": base_response})
+            set_in_cache(user_query, result, file_context)
+            return JSONResponse(result)
 
     except Exception as e:
         error_str = str(e)

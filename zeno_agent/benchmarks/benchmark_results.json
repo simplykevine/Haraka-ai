@@ -1,0 +1,1012 @@
+[
+  {
+    "id": 1,
+    "category": "trade_facts",
+    "question": "What was Kenya's total coffee export value in 2023?",
+    "verified_answer": "Kenya exported approximately USD 280-320 million worth of coffee in 2023",
+    "key_facts": [
+      "Kenya",
+      "coffee",
+      "export",
+      "2023",
+      "USD million"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "ERROR: HTTPConnectionPool(host='127.0.0.1', port=8080): Read timed out. (read timeout=300)",
+        "response_time_seconds": 300.1,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 1.0,
+          "hallucination_rate": 1.0,
+          "context_window_error_rate": 1.0,
+          "key_facts_covered": 0,
+          "reasoning": "Response was an error or empty"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "According to the **Kenya National Bureau of Statistics (KNBS) Economic Survey 2024**, Kenya's total coffee export value in 2023 was **KSh 34.63 billion**.\n\nIn US Dollar terms, this amounted to approximately **$251.86 million** (based on the average exchange rates for that period).\n\n### Key Context for 2023 Coffee Exports:\n*   **Decrease from 2022:** There was a significant decline compared to 2022, when exports were valued at approximately **KSh 37.3 billion** (roughly $312 million). This repres",
+        "response_time_seconds": 6.2,
+        "scores": {
+          "factual_accuracy_error_rate": 0.2,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "I am sorry, but I do not have the final, official data for Kenya's total coffee export value for the entirety of **2023**.\n\nOfficial trade statistics, especially for a full calendar year, are usually compiled and released by government bodies (like the Kenya National Bureau of Statistics or the relevant Ministry of Agriculture/Trade) several months into the following year.\n\n**To find the most accurate figure, you should check the following sources:**\n\n1. **Kenya National Bureau of Statistics (KN",
+        "response_time_seconds": 35.5,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 2,
+    "category": "trade_facts",
+    "question": "Which country is the largest coffee producer in Africa?",
+    "verified_answer": "Ethiopia is the largest coffee producer in Africa",
+    "key_facts": [
+      "Ethiopia",
+      "largest",
+      "Africa",
+      "coffee"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "ERROR: HTTPConnectionPool(host='127.0.0.1', port=8080): Read timed out. (read timeout=300)",
+        "response_time_seconds": 300.0,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 1.0,
+          "hallucination_rate": 1.0,
+          "context_window_error_rate": 1.0,
+          "key_facts_covered": 0,
+          "reasoning": "Response was an error or empty"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "The largest coffee producer in Africa is **Ethiopia**.\n\nEthiopia is not only the top producer on the continent but also ranks as the 5th largest coffee producer in the world. It is widely considered the \"birthplace\" of *Coffea arabica*.\n\n**Key facts about Ethiopian coffee:**\n*   **Production:** It accounts for roughly 3% to 4% of the world's total coffee supply.\n*   **Variety:** Almost all of the coffee grown in Ethiopia is Arabica.\n*   **Economy:** Coffee is Ethiopia's most important export, pr",
+        "response_time_seconds": 5.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The largest coffee producer in Africa is **Ethiopia**.",
+        "response_time_seconds": 0.8,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 3,
+    "category": "trade_facts",
+    "question": "What percentage of Rwanda's export earnings come from tea?",
+    "verified_answer": "Tea accounts for approximately 20-25% of Rwanda's agricultural export earnings",
+    "key_facts": [
+      "Rwanda",
+      "tea",
+      "export earnings",
+      "percentage"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide an expert analysis regarding Rwanda's export earnings, drawing upon the available information. While the provided local knowledge base does not contain specific data on the percentage of Rwanda's export earnings derived solely from tea, and the live web search results do not offer a precise, isolated figure for tea's contribution to Rwanda's total export earnings, we can infer its significant role within the broader",
+        "response_time_seconds": 288.1,
+        "scores": {
+          "factual_accuracy_error_rate": 0.8,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Based on the most recent data from Rwanda\u2019s National Agricultural Export Development Board (NAEB) and the National Institute of Statistics of Rwanda (NISR), tea accounts for approximately **6% to 8%** of Rwanda's total merchandise export earnings.\n\nHere is a more detailed breakdown of the figures:\n\n*   **Annual Revenue:** In 2023, Rwanda earned approximately **$107.6 million** from tea exports.\n*   **Total Exports:** Rwanda\u2019s total merchandise exports for 2023 were valued at roughly **$1.78 bill",
+        "response_time_seconds": 6.7,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "According to the most recent available data, **tea accounts for approximately 20-25% of Rwanda's total export earnings.**\n\nHowever, it's important to note that this figure can fluctuate slightly from year to year based on global commodity prices and the performance of other key exports like coffee and minerals (especially coltan and cassiterite).\n\nFor the most precise, up-to-the-minute figure, you would need to consult the latest reports from the **National Institute of Statistics of Rwanda (NIS",
+        "response_time_seconds": 12.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.8,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 4,
+    "category": "policy",
+    "question": "What is the EAC Common External Tariff rate on maize imports?",
+    "verified_answer": "The EAC Common External Tariff on maize is 50%",
+    "key_facts": [
+      "EAC",
+      "Common External Tariff",
+      "maize",
+      "50%"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Senior Economist at the East African Trade Institute, I can confirm that the standing East African Community (EAC) Common External Tariff (CET) rate on maize imports from countries outside the EAC bloc is 50% ad-valorem. This rate is a critical component of the EAC's trade policy, designed to protect and promote domestic agricultural production within the member states.\n\nThis 50% ad-valorem duty is applied by EAC member states, such as Kenya, on maize imports originating from non-EAC countrie",
+        "response_time_seconds": 29.5,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Under the East African Community (EAC) Common External Tariff (CET), maize is classified as a **Sensitive Item**.\n\nThe current tariff rates are as follows:\n\n### 1. Standard Rate (Grain Maize)\n*   **Tariff Rate:** **50%**\n*   **HS Code:** 1005.90.00 (Maize, other than seed)\n*   **Reasoning:** Maize is protected with a high tariff to encourage regional self-sufficiency and protect local farmers in surplus-producing countries like Tanzania and Uganda from cheap imports from outside the EAC (such as",
+        "response_time_seconds": 6.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The EAC Common External Tariff (CET) rate on **maize imports** is **currently 0%**.\n\nThis is a **duty-free** rate, meaning there is no import duty applied when maize enters any of the East African Community (EAC) member states (Kenya, Tanzania, Uganda, Rwanda, Burundi, and South Sudan) from outside the bloc.\n\n**Important Considerations:**\n\n* **Policy Fluctuation:** While the standard CET rate is 0%, **EAC Partner States often implement temporary measures** (like duty waivers or suspension of the",
+        "response_time_seconds": 41.2,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 5,
+    "category": "macroeconomics",
+    "question": "What was Kenya's GDP growth rate in 2023?",
+    "verified_answer": "Kenya's GDP growth rate in 2023 was approximately 5.6%",
+    "key_facts": [
+      "Kenya",
+      "GDP",
+      "growth",
+      "2023",
+      "5.6%"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide a comprehensive analysis of Kenya's GDP growth rate in 2023, drawing upon the available web search results and my expertise in East African economic dynamics.\n\nKenya's economy demonstrated robust performance in 2023, with the full-year GDP growth rate recorded at **5.70 percent**. This figure represents a significant expansion, especially when viewed against the backdrop of global economic uncertainties and regional",
+        "response_time_seconds": 30.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.1,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Kenya's GDP growth rate in 2023 was **5.6%**.\n\nThis figure was officially released by the **Kenya National Bureau of Statistics (KNBS)** in its *Economic Survey 2024* report.\n\n### Key details regarding the 2023 growth:\n*   **Improvement from 2022:** The 5.6% growth was an increase from the 4.9% (revised) growth recorded in 2022.\n*   **Main Driver (Agriculture):** The primary driver of this growth was a strong recovery in the **Agriculture, Forestry, and Fishing sector**, which grew by **6.5%** i",
+        "response_time_seconds": 3.8,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "According to the **International Monetary Fund (IMF)**, Kenya's estimated GDP growth rate for **2023** was **5.3%**.\n\nIt's worth noting that different organizations might have slightly different final figures, but the IMF's projection is a widely cited benchmark.",
+        "response_time_seconds": 2.7,
+        "scores": {
+          "factual_accuracy_error_rate": 0.1,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 6,
+    "category": "trade_facts",
+    "question": "What is Ethiopia's annual coffee export volume in 60kg bags?",
+    "verified_answer": "Ethiopia exports approximately 6-7 million 60kg bags of coffee annually",
+    "key_facts": [
+      "Ethiopia",
+      "coffee",
+      "export volume",
+      "60kg bags",
+      "million"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "Ethiopia's annual coffee export volume is projected to reach significant levels in the upcoming marketing year, underscoring the commodity's critical role in the nation's economy. For the Marketing Year (MY) 2025/26, Ethiopia's coffee exports are forecast to achieve a record-high volume of approximately 7.8 million 60-kg bags. This projection represents a substantial increase, specifically an 11.4% rise, compared to previous periods, indicating robust growth in the sector. Some forecasts even su",
+        "response_time_seconds": 24.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.2,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "For the most recent fiscal year (2023/24), Ethiopia exported approximately **4.97 million bags** (60kg each).\n\nAccording to the Ethiopian Coffee and Tea Authority (ECTA), the country exported a record **298,500 metric tons** of coffee during the fiscal year that ended in July 2024. \n\nHere is a breakdown of recent trends and context:\n\n### 1. Recent Export Volumes\n*   **2023/24:** ~4.97 million bags (298,500 metric tons) \u2014 *A record high in terms of volume.*\n*   **2022/23:** ~4.0 million bags (240",
+        "response_time_seconds": 6.5,
+        "scores": {
+          "factual_accuracy_error_rate": 0.2,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Ethiopia's annual coffee export volume fluctuates from year to year due to various factors like weather conditions, market demand, and government policies.\n\nHowever, based on recent trends and typical figures, Ethiopia generally exports somewhere in the range of **4.0 million to 5.5 million 60kg bags** of coffee annually.\n\nFor the most precise and up-to-date figure, you would need to consult the latest reports from:\n\n* **The Ethiopian Coffee and Tea Authority (ECTA)**\n* **The International Coffe",
+        "response_time_seconds": 2.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.8,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 7,
+    "category": "institutions",
+    "question": "What does NAEB stand for and which country is it in?",
+    "verified_answer": "NAEB stands for National Agricultural Export Development Board and it is in Rwanda",
+    "key_facts": [
+      "NAEB",
+      "National Agricultural Export Development Board",
+      "Rwanda"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "NAEB stands for the National Agricultural Export Development Board, and it is located in Rwanda. This institution plays a pivotal role in the East African nation's economic development strategy, particularly in diversifying and enhancing its agricultural export sector.\n\nThe National Agricultural Export Development Board (NAEB) is mandated to promote and facilitate the export of agricultural products from Rwanda. Its activities encompass a broad spectrum, from supporting exporters in accessing in",
+        "response_time_seconds": 26.7,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "NAEB stands for the **National Agricultural Export Development Board**.\n\nIt is located in **Rwanda**.\n\nIt is a public commercial institution established to facilitate the growth of Rwanda\u2019s agricultural exports, specifically focusing on products like coffee, tea, and horticultural crops.\n\n***\n\n*Note: Historically, NAEB also stood for the **National Association of Educational Broadcasters** in the **United States**, but that organization was disbanded in 1981.*",
+        "response_time_seconds": 3.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.0,
+          "hallucination_rate": 0.0,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "**NAEB** stands for the **National Agricultural Export Development Board**.\n\nIt is located in **Rwanda**.",
+        "response_time_seconds": 14.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.0,
+          "hallucination_rate": 0.0,
+          "context_window_error_rate": 0.0,
+          "key_facts_covered": 3,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 8,
+    "category": "trade_facts",
+    "question": "What is Kenya's main tea export destination?",
+    "verified_answer": "Pakistan is Kenya's largest tea export destination, receiving over 35% of Kenya's tea exports",
+    "key_facts": [
+      "Kenya",
+      "tea",
+      "export",
+      "Pakistan",
+      "largest destination"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "Kenya's primary tea export destination is consistently Pakistan, a market that absorbs a significant proportion of the country's total tea output. This dominance is evident across recent periods, with Pakistan importing 20.83 million kilograms in August 2025, representing a substantial 40% of Kenya's total tea export volume for that month. Looking at a broader annual perspective, Pakistan imported 206.27 million kilograms of Kenyan tea in 2024, accounting for 34.7% of the total tea exports. This",
+        "response_time_seconds": 30.5,
+        "scores": {
+          "factual_accuracy_error_rate": 0.5,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "**Pakistan** is Kenya's main tea export destination.\n\nPakistan consistently ranks as the largest buyer of Kenyan tea, often accounting for roughly **40% to 50%** of Kenya's total tea export volume.\n\nOther significant markets for Kenyan tea include:\n*   **Egypt** (the second-largest market)\n*   **The United Kingdom**\n*   **United Arab Emirates (UAE)**\n*   **Russia**\n*   **Sudan**\n\nKenya is the world's leading exporter of black tea, and the tea industry is one of the country's top foreign exchange",
+        "response_time_seconds": 3.8,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Kenya's main tea export destination is **Pakistan**.",
+        "response_time_seconds": 0.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 9,
+    "category": "policy",
+    "question": "What is the EUDR and how does it affect East African coffee exporters?",
+    "verified_answer": "EUDR is the EU Deforestation Regulation requiring proof that commodities are not linked to deforestation. East African coffee exporters must provide geo-location data for farms.",
+    "key_facts": [
+      "EUDR",
+      "EU Deforestation Regulation",
+      "deforestation",
+      "geo-location",
+      "East Africa"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "The European Union Deforestation Regulation (EUDR) represents a pivotal shift in global trade policy, designed to combat deforestation and forest degradation linked to the production of specific commodities imported into the EU market. As Dr. Zeno, Senior Economist at the East African Trade Institute, I can confirm that this regulation is poised to profoundly reshape the landscape for East African agricultural exporters, particularly within the critical coffee sector. The EUDR's core objective i",
+        "response_time_seconds": 37.0,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "The **EU Deforestation Regulation (EUDR)** is a landmark piece of legislation by the European Union designed to ensure that products consumed within the EU do not contribute to global deforestation or forest degradation.\n\nFor East African coffee exporters\u2014particularly in countries like **Ethiopia, Uganda, Kenya, Rwanda, and Tanzania**\u2014this regulation represents one of the most significant shifts in trade requirements in decades.\n\n---\n\n### 1. What is the EUDR?\nPassed in 2023, the EUDR requires co",
+        "response_time_seconds": 6.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The **EU Deforestation Regulation (EUDR)** is a landmark piece of European Union legislation designed to combat global deforestation and forest degradation by ensuring that commodities consumed and produced within the EU market do not contribute to these environmental problems.\n\nHere is a detailed breakdown of what the EUDR is and how it specifically affects East African coffee exporters.\n\n---\n\n## Part 1: What is the EU Deforestation Regulation (EUDR)?\n\nThe EUDR, officially Regulation (EU) 2023/",
+        "response_time_seconds": 3.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 10,
+    "category": "macroeconomics",
+    "question": "What share of Ethiopia's export earnings does coffee represent?",
+    "verified_answer": "Coffee represents approximately 30-35% of Ethiopia's total export earnings",
+    "key_facts": [
+      "Ethiopia",
+      "coffee",
+      "export earnings",
+      "30-35%"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Senior Economist at the East African Trade Institute, I can provide an analysis of Ethiopia's coffee export performance based on the available information. While the provided web search results offer detailed figures on Ethiopia's coffee export earnings across various periods, they do not contain corresponding data on Ethiopia's total export earnings for the same periods. Consequently, a precise calculation of coffee's exact share of Ethiopia's total export earnings cannot be definitively det",
+        "response_time_seconds": 34.6,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Coffee typically represents between **30% and 35%** of Ethiopia's total export earnings.\n\nWhile the exact percentage fluctuates annually based on global coffee prices and the performance of other sectors (like gold, flowers, and khat), here is a breakdown of its recent economic impact:\n\n*   **Revenue Milestones:** In recent fiscal years (such as 2021/22 and 2022/23), Ethiopia has consistently earned over **$1.3 billion** annually from coffee exports. This was a significant jump from previous yea",
+        "response_time_seconds": 5.7,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Coffee is a **crucial** part of Ethiopia's export earnings, but the exact share can fluctuate from year to year due to global commodity prices and harvest yields.\n\nHowever, historically and generally speaking, coffee accounts for **around 25% to 35%** of Ethiopia's total export earnings.\n\nIt is consistently Ethiopia's **single largest export commodity**.",
+        "response_time_seconds": 21.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 11,
+    "category": "scenario",
+    "question": "If Kenya imposes a 20% export tax on raw coffee, what is the likely economic impact?",
+    "verified_answer": "A 20% export tax would reduce export competitiveness, lower farm gate prices for smallholders, potentially increase domestic processing, but risk losing market share to Ethiopia and Uganda",
+    "key_facts": [
+      "export tax",
+      "farm gate price",
+      "competitiveness",
+      "processing",
+      "market share"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "Dr. Zeno, Policy Impact Economist\nEast African Community & World Bank\n\n**Economic Policy Brief: Impact of a 20% Export Tax on Raw Coffee in Kenya**\n\n**BASELINE CONDITIONS**\n\nKenya's coffee sector, a vital component of its agricultural economy, currently exhibits a complex profile characterized by significant production volumes and employment, yet a relatively modest contribution to the national Gross Domestic Product. In Marketing Year (MY) 2024/25, Kenya's coffee production stood at 750,000 bag",
+        "response_time_seconds": 112.1,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Imposing a 20% export tax on raw (green) coffee in Kenya would be a significant protectionist move, likely aimed at encouraging domestic \"value addition\" (roasting and packaging). However, the economic consequences would be complex, creating distinct winners and losers.\n\nHere is an analysis of the likely economic impacts:\n\n### 1. Impact on Farmers and Producers (Negative)\nThe most immediate and severe impact would be felt by the coffee farmers.\n*   **Lower Farm-gate Prices:** Exporters will not ",
+        "response_time_seconds": 7.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The imposition of a 20% export tax on raw coffee by Kenya would have a complex set of economic impacts, affecting domestic producers, consumers, exporters, the Kenyan government, and the global coffee market.\n\nHere is a breakdown of the likely economic consequences:\n\n---\n\n## 1. Impact on Kenyan Coffee Producers (Farmers)\n\nThis is the most immediate and significant impact.\n\n* **Lower Farm-Gate Prices:** The export tax acts as a wedge between the international market price and the price farmers re",
+        "response_time_seconds": 29.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 12,
+    "category": "trade_facts",
+    "question": "What is the name of Kenya's coffee auction system?",
+    "verified_answer": "The Nairobi Coffee Exchange (NCE) is Kenya's coffee auction system",
+    "key_facts": [
+      "Nairobi Coffee Exchange",
+      "NCE",
+      "auction",
+      "Kenya"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "Kenya's coffee auction system is known as the Nairobi Coffee Exchange (NCE). This institution has been a cornerstone of the country's coffee trade, with its origins tracing back to 1934, as indicated by discussions around its evolution and upcoming reforms in 2025. The NCE serves as Kenya's central coffee auction, playing a pivotal role in establishing market standards for transparency and ensuring access for Kenyan coffee growers to the global market.\n\nThe Nairobi Coffee Exchange facilitates li",
+        "response_time_seconds": 31.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.3,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Kenya\u2019s coffee auction system is called the **Nairobi Coffee Exchange (NCE)**.\n\nEstablished in the 1930s, it is a centralized trading mechanism where licensed dealers bid for coffee based on samples provided by marketing agents. It is widely considered one of the most transparent and effective price-discovery systems for high-quality Arabica coffee in the world.",
+        "response_time_seconds": 2.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The name of Kenya's coffee auction system is the **Nairobi Coffee Exchange (NCE)**.",
+        "response_time_seconds": 28.2,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 13,
+    "category": "institutions",
+    "question": "What does COMESA stand for?",
+    "verified_answer": "COMESA stands for Common Market for Eastern and Southern Africa",
+    "key_facts": [
+      "COMESA",
+      "Common Market",
+      "Eastern",
+      "Southern Africa"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "COMESA stands for the Common Market for Eastern and Southern Africa.",
+        "response_time_seconds": 1.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "COMESA stands for the **Common Market for Eastern and Southern Africa**. \n\nIt is a regional economic organization consisting of 21 member states in Africa, focused on promoting economic integration through trade and the development of natural and human resources.",
+        "response_time_seconds": 1.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "COMESA stands for the **Common Market for Eastern and Southern Africa**.",
+        "response_time_seconds": 0.5,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 14,
+    "category": "macroeconomics",
+    "question": "What is Uganda's main agricultural export commodity?",
+    "verified_answer": "Coffee is Uganda's main agricultural export commodity, accounting for over 20% of export earnings",
+    "key_facts": [
+      "Uganda",
+      "coffee",
+      "main export",
+      "agricultural"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can confirm that Uganda's main agricultural export commodity is unequivocally coffee. This staple crop has historically been, and continues to be, the cornerstone of the nation's agricultural export earnings, playing a critical role in its trade balance and rural livelihoods.\n\nRecent data underscores coffee's significant contribution to Uganda's export profile. In 2024, coffee exports were valued at approximately $1.5 billion. ",
+        "response_time_seconds": 57.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.3,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Uganda's main agricultural export commodity is **coffee**.\n\nHere are a few key facts about Uganda's coffee industry:\n\n*   **Types:** Uganda produces two main types of coffee: **Robusta** (which is native to the country and accounts for about 80% of exports) and **Arabica**.\n*   **Economic Impact:** Coffee is the country\u2019s largest source of foreign exchange earnings among agricultural products.\n*   **Global Standing:** Uganda is consistently one of the world's top ten coffee exporters and is ofte",
+        "response_time_seconds": 4.0,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Uganda's main agricultural export commodity is **Coffee**.",
+        "response_time_seconds": 0.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.0,
+          "hallucination_rate": 0.0,
+          "context_window_error_rate": 0.0,
+          "key_facts_covered": 4,
+          "reasoning": "The model correctly identified coffee as Uganda's main agricultural export, covering all key facts."
+        }
+      }
+    }
+  },
+  {
+    "id": 15,
+    "category": "trade_facts",
+    "question": "What was the global arabica coffee price range in 2024?",
+    "verified_answer": "Arabica coffee prices in 2024 ranged from approximately 180-320 US cents per pound due to tight Brazilian supply",
+    "key_facts": [
+      "arabica",
+      "price",
+      "2024",
+      "cents per pound",
+      "Brazil"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide a comprehensive overview of the global arabica coffee price range in 2024, drawing upon available market data and contextualizing it for East African economies. Understanding these price dynamics is crucial for our region, given the significant role arabica coffee plays in export earnings and rural livelihoods.\n\nBased on market intelligence from 2024, the global arabica coffee price range exhibited considerable vola",
+        "response_time_seconds": 68.2,
+        "scores": {
+          "factual_accuracy_error_rate": 1.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "In 2024, the global Arabica coffee market (traded as the \"Coffee C\" contract on the ICE Futures US) has experienced significant volatility and a strong upward trend.\n\nAs of September 2024, the price range for Arabica coffee has been approximately:\n\n*   **Low:** ~$1.75 per pound (January/February)\n*   **High:** ~$2.70 per pound (September)\n\n### 2024 Price Movement Breakdown\n\n1.  **Q1 (January \u2013 March):** Prices started the year relatively stable, fluctuating between **$1.80 and $1.95**. There was",
+        "response_time_seconds": 7.1,
+        "scores": {
+          "factual_accuracy_error_rate": 0.3,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "I cannot provide you with the exact, real-time global Arabica coffee price range for the entirety of 2024. Here's why and what information I can give you:\n\n**Why a Definitive 2024 Range is Unavailable:**\n\n* **Prices are Dynamic:** Coffee prices (traded on futures exchanges like the ICE) fluctuate daily, sometimes hourly, based on weather, crop reports, currency strength, and global demand.\n* **2024 is Ongoing:** Since the year is not over, the final price range for the entire year cannot be dete",
+        "response_time_seconds": 1.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.8,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 16,
+    "category": "policy",
+    "question": "What is the African Continental Free Trade Area and when did it come into effect?",
+    "verified_answer": "The AfCFTA is a free trade agreement covering 54 African countries that came into effect January 1 2021",
+    "key_facts": [
+      "AfCFTA",
+      "African Continental Free Trade Area",
+      "54 countries",
+      "2021"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "The African Continental Free Trade Area (AfCFTA) represents a monumental stride towards deeper economic integration across the African continent. It is a comprehensive trade zone established in 2018 through the African Continental Free Trade Agreement by member states of the African Union, with the primary objective of fostering intra-African trade and accelerating regional economic integration. As the world's largest free-trade area by the number of participating countries, it currently boasts ",
+        "response_time_seconds": 35.2,
+        "scores": {
+          "factual_accuracy_error_rate": 0.3,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "The **African Continental Free Trade Area (AfCFTA)** is a landmark trade agreement designed to create a single, continent-wide market for goods and services across Africa. It is a flagship project of the African Union\u2019s \"Agenda 2063\" and represents the largest free trade area in the world in terms of the number of participating countries since the formation of the World Trade Organization (WTO).\n\nHere is a detailed breakdown of what it is and its timeline:\n\n### What is the AfCFTA?\nThe primary go",
+        "response_time_seconds": 6.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The **African Continental Free Trade Area (AfCFTA)** is a landmark agreement among African Union member states to create a single continental market for goods and services, with free movement of business persons and investments.\n\nHere are the key details:\n\n### What is the AfCFTA?\n\nThe primary goal of the AfCFTA is to boost intra-African trade by eliminating tariffs on **90% of goods** traded between member states, reducing non-tariff barriers, and establishing a unified framework for trade acros",
+        "response_time_seconds": 35.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.5,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 17,
+    "category": "trade_facts",
+    "question": "How many smallholder farmers are involved in Kenya's tea sector?",
+    "verified_answer": "Approximately 600,000 smallholder farmers are registered with the Kenya Tea Development Agency (KTDA)",
+    "key_facts": [
+      "600,000",
+      "smallholder",
+      "KTDA",
+      "Kenya",
+      "tea"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "Kenya's tea sector is significantly underpinned by a vast network of smallholder farmers, though the precise number varies slightly across different reports. Multiple sources, including those detailing the operations of the Kenya Tea Development Agency (KTDA), consistently indicate that approximately 650,000 smallholder farmers are involved. These farmers are typically organized into 66 tea factories under the KTDA framework, which dominates the cooperative landscape. However, a more recent Revi",
+        "response_time_seconds": 29.8,
+        "scores": {
+          "factual_accuracy_error_rate": 0.3,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "There are approximately **650,000 to 700,000** smallholder farmers involved in Kenya\u2019s tea sector.\n\nHere are a few key facts regarding their role in the industry:\n\n*   **Production Share:** Smallholder farmers are the backbone of the industry, accounting for about **60% of Kenya's total tea production**. The remaining 40% is produced by large-scale commercial plantations (estates).\n*   **Management:** The vast majority of these smallholders are represented and managed by the **Kenya Tea Developm",
+        "response_time_seconds": 5.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.1,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Estimates regarding the number of smallholder farmers involved in Kenya's tea sector vary slightly depending on the source and the exact year of the data, but the most commonly cited and authoritative figures indicate that **approximately 500,000 to 600,000 smallholder farmers** are involved.\n\nHere's a breakdown of why this range is used:\n\n* **Kenya Tea Board (KTB) and Industry Reports:** These sources often cite figures around **550,000** registered growers who supply tea to the various factori",
+        "response_time_seconds": 0.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 18,
+    "category": "macroeconomics",
+    "question": "What is Tanzania's contribution to EAC GDP?",
+    "verified_answer": "Tanzania contributes approximately 25-30% of EAC total GDP making it one of the largest EAC economies",
+    "key_facts": [
+      "Tanzania",
+      "EAC",
+      "GDP",
+      "25-30%"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide a comprehensive analysis of Tanzania's economic contribution to the East African Community's Gross Domestic Product. Based on the most recent available data, Tanzania contributes approximately 11.11% to the total GDP of the East African Community.\n\nThis calculation is derived from the East African Community's reported total GDP of US$720 billion, as outlined in the EAC's market size and access information. Concurren",
+        "response_time_seconds": 28.2,
+        "scores": {
+          "factual_accuracy_error_rate": 0.8,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "Tanzania is the **second-largest economy** in the East African Community (EAC), following Kenya. Its contribution to the regional GDP has become increasingly significant due to its consistent economic growth and the recent expansion of the bloc.\n\nBased on data from the EAC Secretariat, the IMF, and the African Development Bank for 2023/2024, here is the breakdown of Tanzania\u2019s contribution:\n\n### 1. Percentage Contribution\nTanzania contributes approximately **24% to 27%** of the total EAC GDP. \n\n",
+        "response_time_seconds": 6.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.05,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "Tanzania's contribution to the East African Community (EAC) GDP is **significant and growing**, but the exact percentage fluctuates slightly from year to year based on the latest economic data released by the EAC Secretariat and national statistical bureaus.\n\nBased on recent available data (typically reflecting figures from **2022 or 2023**), Tanzania generally accounts for **around 20% to 25%** of the total EAC Gross Domestic Product.\n\nHere is a breakdown of why this figure is important and the",
+        "response_time_seconds": 1.6,
+        "scores": {
+          "factual_accuracy_error_rate": 0.2,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 19,
+    "category": "scenario",
+    "question": "What would happen to maize prices in Kenya if Uganda banned maize exports to Kenya?",
+    "verified_answer": "Kenyan domestic maize prices would rise 15-25% due to supply shortfall, affecting food security for urban poor and triggering NCPB reserve releases",
+    "key_facts": [
+      "maize",
+      "price increase",
+      "15-25%",
+      "supply shortfall",
+      "NCPB",
+      "food security"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "**Policy Brief: Assessing the Impact of a Ugandan Maize Export Ban on Kenyan Maize Prices and the Efficacy of Domestic Policy Responses**\n\n**Introduction**\nThis policy brief addresses a critical hypothetical scenario: the implications for maize prices in Kenya should Uganda implement a ban on maize exports to its East African Community (EAC) partner. As Dr. Zeno, an economist advising the EAC and the World Bank, this analysis will outline the immediate and long-term economic consequences for Ken",
+        "response_time_seconds": 105.4,
+        "scores": {
+          "factual_accuracy_error_rate": 0.5,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "If Uganda were to ban maize exports to Kenya, the impact would be immediate and significant, primarily because Kenya is a **net importer** of maize and relies heavily on Uganda to plug its annual production deficit.\n\nHere is a detailed breakdown of what would happen to maize prices and the broader Kenyan economy:\n\n### 1. Immediate Price Spike\nThe most direct result would be a sharp increase in the price of maize and maize flour (*unga*).\n*   **Supply Shock:** Kenya typically consumes about 50\u201352",
+        "response_time_seconds": 7.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.2,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "If Uganda banned maize exports to Kenya, the immediate and likely long-term effects on Kenyan maize prices would be **upward pressure, leading to price increases.**\n\nHere is a detailed breakdown of the mechanisms and potential outcomes:\n\n---\n\n## 1. Immediate Impact: Supply Shock and Price Spike\n\nUganda is a significant source of maize imports for Kenya, especially during periods of domestic shortage or when Kenyan harvests are poor.\n\n### A. Reduced Supply\n* **Direct Reduction:** The immediate re",
+        "response_time_seconds": 3.9,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "id": 20,
+    "category": "institutions",
+    "question": "What is the role of the East African Community Secretariat in trade policy?",
+    "verified_answer": "The EAC Secretariat coordinates regional integration including the Customs Union, Common Market, monetary union progress, and harmonization of trade policies among 7 partner states",
+    "key_facts": [
+      "EAC Secretariat",
+      "Customs Union",
+      "Common Market",
+      "7 partner states",
+      "trade policy"
+    ],
+    "models": {
+      "Zeno Agent": {
+        "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can elaborate on the pivotal role of the East African Community (EAC) Secretariat in shaping and implementing regional trade policy. The Secretariat serves as the principal executive organ of the Community, tasked with the day-to-day administration and coordination of EAC activities, including the critical domain of trade. Its functions are multifaceted, ranging from policy formulation and harmonization to the facilitation of m",
+        "response_time_seconds": 37.3,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash (Raw)": {
+        "response": "The East African Community (EAC) Secretariat, headquartered in Arusha, Tanzania, is the executive organ of the Community. In the realm of trade policy, its primary role is to act as the **coordinator, facilitator, and monitor** of regional integration.\n\nWhile the Council of Ministers makes the final policy decisions, the Secretariat is the \"engine room\" that drives the technical work required to make trade flow across the region.\n\nHere is a detailed breakdown of the Secretariat's roles in trade ",
+        "response_time_seconds": 7.2,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      },
+      "Gemini-Flash-Lite (Raw)": {
+        "response": "The East African Community (EAC) Secretariat plays a **central, multifaceted, and crucial role** in the formulation, implementation, coordination, and monitoring of trade policy within the EAC bloc.\n\nIts primary function is to serve as the **administrative and executive arm** of the EAC, ensuring that the decisions made by the policy organs (like the Summit of Heads of State and the Council of Ministers) regarding trade are translated into actionable policies and integrated into the national fra",
+        "response_time_seconds": 4.5,
+        "scores": {
+          "factual_accuracy_error_rate": 0.0,
+          "citation_accuracy_error_rate": 0.5,
+          "hallucination_rate": 0.5,
+          "context_window_error_rate": 0.5,
+          "key_facts_covered": 0,
+          "reasoning": "unknown"
+        }
+      }
+    }
+  }
+]

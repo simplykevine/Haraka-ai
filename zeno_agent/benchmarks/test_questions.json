@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "category": "trade_facts",
+    "question": "What was Kenya's total coffee export value in 2023?",
+    "verified_answer": "Kenya exported approximately USD 280-320 million worth of coffee in 2023",
+    "key_facts": ["Kenya", "coffee", "export", "2023", "USD million"],
+    "source": "ICO / Kenya Revenue Authority"
+  },
+  {
+    "id": 2,
+    "category": "trade_facts",
+    "question": "Which country is the largest coffee producer in Africa?",
+    "verified_answer": "Ethiopia is the largest coffee producer in Africa",
+    "key_facts": ["Ethiopia", "largest", "Africa", "coffee"],
+    "source": "ICO 2024"
+  },
+  {
+    "id": 3,
+    "category": "trade_facts",
+    "question": "What percentage of Rwanda's export earnings come from tea?",
+    "verified_answer": "Tea accounts for approximately 20-25% of Rwanda's agricultural export earnings",
+    "key_facts": ["Rwanda", "tea", "export earnings", "percentage"],
+    "source": "NAEB Rwanda 2023"
+  },
+  {
+    "id": 4,
+    "category": "policy",
+    "question": "What is the EAC Common External Tariff rate on maize imports?",
+    "verified_answer": "The EAC Common External Tariff on maize is 50%",
+    "key_facts": ["EAC", "Common External Tariff", "maize", "50%"],
+    "source": "EAC CET Schedule"
+  },
+  {
+    "id": 5,
+    "category": "macroeconomics",
+    "question": "What was Kenya's GDP growth rate in 2023?",
+    "verified_answer": "Kenya's GDP growth rate in 2023 was approximately 5.6%",
+    "key_facts": ["Kenya", "GDP", "growth", "2023", "5.6%"],
+    "source": "World Bank / Kenya National Bureau of Statistics"
+  },
+  {
+    "id": 6,
+    "category": "trade_facts",
+    "question": "What is Ethiopia's annual coffee export volume in 60kg bags?",
+    "verified_answer": "Ethiopia exports approximately 6-7 million 60kg bags of coffee annually",
+    "key_facts": ["Ethiopia", "coffee", "export volume", "60kg bags", "million"],
+    "source": "ICO 2023/2024"
+  },
+  {
+    "id": 7,
+    "category": "institutions",
+    "question": "What does NAEB stand for and which country is it in?",
+    "verified_answer": "NAEB stands for National Agricultural Export Development Board and it is in Rwanda",
+    "key_facts": ["NAEB", "National Agricultural Export Development Board", "Rwanda"],
+    "source": "NAEB official"
+  },
+  {
+    "id": 8,
+    "category": "trade_facts",
+    "question": "What is Kenya's main tea export destination?",
+    "verified_answer": "Pakistan is Kenya's largest tea export destination, receiving over 35% of Kenya's tea exports",
+    "key_facts": ["Kenya", "tea", "export", "Pakistan", "largest destination"],
+    "source": "Kenya Tea Board 2023"
+  },
+  {
+    "id": 9,
+    "category": "policy",
+    "question": "What is the EUDR and how does it affect East African coffee exporters?",
+    "verified_answer": "EUDR is the EU Deforestation Regulation requiring proof that commodities are not linked to deforestation. East African coffee exporters must provide geo-location data for farms.",
+    "key_facts": ["EUDR", "EU Deforestation Regulation", "deforestation", "geo-location", "East Africa"],
+    "source": "EU Regulation 2023/1115"
+  },
+  {
+    "id": 10,
+    "category": "macroeconomics",
+    "question": "What share of Ethiopia's export earnings does coffee represent?",
+    "verified_answer": "Coffee represents approximately 30-35% of Ethiopia's total export earnings",
+    "key_facts": ["Ethiopia", "coffee", "export earnings", "30-35%"],
+    "source": "Ethiopian Coffee and Tea Authority 2023"
+  },
+  {
+    "id": 11,
+    "category": "scenario",
+    "question": "If Kenya imposes a 20% export tax on raw coffee, what is the likely economic impact?",
+    "verified_answer": "A 20% export tax would reduce export competitiveness, lower farm gate prices for smallholders, potentially increase domestic processing, but risk losing market share to Ethiopia and Uganda",
+    "key_facts": ["export tax", "farm gate price", "competitiveness", "processing", "market share"],
+    "source": "Economic theory + EAC trade policy precedents"
+  },
+  {
+    "id": 12,
+    "category": "trade_facts",
+    "question": "What is the name of Kenya's coffee auction system?",
+    "verified_answer": "The Nairobi Coffee Exchange (NCE) is Kenya's coffee auction system",
+    "key_facts": ["Nairobi Coffee Exchange", "NCE", "auction", "Kenya"],
+    "source": "NCE official"
+  },
+  {
+    "id": 13,
+    "category": "institutions",
+    "question": "What does COMESA stand for?",
+    "verified_answer": "COMESA stands for Common Market for Eastern and Southern Africa",
+    "key_facts": ["COMESA", "Common Market", "Eastern", "Southern Africa"],
+    "source": "COMESA official"
+  },
+  {
+    "id": 14,
+    "category": "macroeconomics",
+    "question": "What is Uganda's main agricultural export commodity?",
+    "verified_answer": "Coffee is Uganda's main agricultural export commodity, accounting for over 20% of export earnings",
+    "key_facts": ["Uganda", "coffee", "main export", "agricultural"],
+    "source": "Uganda Coffee Development Authority 2023"
+  },
+  {
+    "id": 15,
+    "category": "trade_facts",
+    "question": "What was the global arabica coffee price range in 2024?",
+    "verified_answer": "Arabica coffee prices in 2024 ranged from approximately 180-320 US cents per pound due to tight Brazilian supply",
+    "key_facts": ["arabica", "price", "2024", "cents per pound", "Brazil"],
+    "source": "ICO / ICE Futures 2024"
+  },
+  {
+    "id": 16,
+    "category": "policy",
+    "question": "What is the African Continental Free Trade Area and when did it come into effect?",
+    "verified_answer": "The AfCFTA is a free trade agreement covering 54 African countries that came into effect January 1 2021",
+    "key_facts": ["AfCFTA", "African Continental Free Trade Area", "54 countries", "2021"],
+    "source": "African Union"
+  },
+  {
+    "id": 17,
+    "category": "trade_facts",
+    "question": "How many smallholder farmers are involved in Kenya's tea sector?",
+    "verified_answer": "Approximately 600,000 smallholder farmers are registered with the Kenya Tea Development Agency (KTDA)",
+    "key_facts": ["600,000", "smallholder", "KTDA", "Kenya", "tea"],
+    "source": "KTDA Annual Report 2023"
+  },
+  {
+    "id": 18,
+    "category": "macroeconomics",
+    "question": "What is Tanzania's contribution to EAC GDP?",
+    "verified_answer": "Tanzania contributes approximately 25-30% of EAC total GDP making it one of the largest EAC economies",
+    "key_facts": ["Tanzania", "EAC", "GDP", "25-30%"],
+    "source": "EAC Statistics 2023"
+  },
+  {
+    "id": 19,
+    "category": "scenario",
+    "question": "What would happen to maize prices in Kenya if Uganda banned maize exports to Kenya?",
+    "verified_answer": "Kenyan domestic maize prices would rise 15-25% due to supply shortfall, affecting food security for urban poor and triggering NCPB reserve releases",
+    "key_facts": ["maize", "price increase", "15-25%", "supply shortfall", "NCPB", "food security"],
+    "source": "COMESA food security reports"
+  },
+  {
+    "id": 20,
+    "category": "institutions",
+    "question": "What is the role of the East African Community Secretariat in trade policy?",
+    "verified_answer": "The EAC Secretariat coordinates regional integration including the Customs Union, Common Market, monetary union progress, and harmonization of trade policies among 7 partner states",
+    "key_facts": ["EAC Secretariat", "Customs Union", "Common Market", "7 partner states", "trade policy"],
+    "source": "EAC Treaty"
+  }
+]
