@@ -60,14 +60,12 @@ def get_base_rag_results(query: str, top_k: int = 5) -> List[Dict[str, str]]:
 
 
 def ask_knowledgebase_with_context(query: str, file_context: str = "", top_k: int = 5) -> str:
-    # 1. Local RAG
     base_results = get_base_rag_results(query, top_k)
     rag_content_list = [r["content"] for r in base_results]
     rag_content = "\n\n".join(rag_content_list)
     has_rag = bool(rag_content_list)
     has_file = bool(file_context and file_context.strip())
 
-    # 2. Web search
     web_results = search_web(
         query=f"{query} East Africa Kenya 2025 2026",
         num_results=5
@@ -77,7 +75,6 @@ def ask_knowledgebase_with_context(query: str, file_context: str = "", top_k: in
 
     print(f"[RAG] DB results: {len(rag_content_list)} | Web results: {len(web_results)} | File: {has_file}")
 
-    # 3. Build context block
     context_block = ""
     if has_file:
         context_block += f"=== UPLOADED DOCUMENT ===\n{file_context}\n\n"

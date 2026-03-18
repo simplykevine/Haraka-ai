@@ -1,0 +1,1263 @@
+{
+  "timestamp": "2026-03-17T01:30:51.314283",
+  "benchmark_name": "Zeno vs OpenAI LLMs (East African Economics)",
+  "questions_count": 20,
+  "models": [
+    "Zeno Agent",
+    "GPT-4o",
+    "GPT-4-Turbo",
+    "GPT-3.5-Turbo"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "trade_facts",
+      "question": "What was Kenya's total coffee export value in 2023?",
+      "verified_answer": "Kenya exported approximately USD 280-320 million worth of coffee in 2023",
+      "key_facts": [
+        "Kenya",
+        "coffee",
+        "export",
+        "2023",
+        "USD million"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Senior Economist at the East African Trade Institute, I can provide a comprehensive analysis of Kenya's coffee export performance, drawing upon the available web search results.\n\nRegarding Kenya's total coffee export value specifically for the calendar year 2023, the provided web search results offer figures for the *2023/2024 coffee year*. This distinction is important, as a coffee year typically runs from October of one year to September of the next. Therefore, the data presented for the 20",
+          "response_time_seconds": 34.63,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 2/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "As of my last update in October 2023, specific figures for Kenya's total coffee export value in 2023 were not yet available. However, according to the International Coffee Organization (ICO) and Kenya's Coffee Directorate, Kenya's coffee exports have historically been significant, contributing substantially to the country's economy. For the most accurate and up-to-date figures, it is recommended to consult the latest reports from the Kenya National Bureau of Statistics (KNBS) or the Internationa",
+          "response_time_seconds": 6.0,
+          "scores": {
+            "factual_accuracy_error_rate": 0.8,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 3,
+            "reasoning": "Matched 1/5 key terms, 3 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of my last update in December 2023, I don't have the specific total export value of Kenyan coffee for the year 2023. For the most accurate and current data regarding Kenya's coffee export values, I recommend checking with the Coffee Board of Kenya or relevant government trade departments, as well as international trade databases and reports from institutions like the International Coffee Organization (ICO) or the World Bank. These sources regularly update and publish detailed trade statistics",
+          "response_time_seconds": 5.16,
+          "scores": {
+            "factual_accuracy_error_rate": 0.8,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 1/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "As of now, it is not possible to provide the exact total coffee export value for Kenya in 2023 as the year has not yet concluded. However, we can look at the most recent data available to provide an estimate.\n\nIn 2021, Kenya's total coffee export earnings were approximately $132 million, according to the International Coffee Organization (ICO). It is important to note that coffee prices can fluctuate due to various factors such as weather conditions, global demand, and market dynamics.\n\nFor the ",
+          "response_time_seconds": 2.1,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 3,
+            "reasoning": "Matched 2/5 key terms, 3 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "category": "trade_facts",
+      "question": "Which country is the largest coffee producer in Africa?",
+      "verified_answer": "Ethiopia is the largest coffee producer in Africa",
+      "key_facts": [
+        "Ethiopia",
+        "largest",
+        "Africa",
+        "coffee"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can confirm that Ethiopia stands as the largest coffee producer on the African continent. This position is significant not only for Ethiopia's economy but also for the broader East African region, which plays a crucial role in the global coffee market.\n\nEthiopia, widely recognized as the birthplace of Arabica coffee, yields an impressive 472,000 tonnes annually, solidifying its rank as the continent's top producer. This substan",
+          "response_time_seconds": 29.46,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Ethiopia is the largest coffee producer in Africa. According to the International Coffee Organization (ICO), Ethiopia is renowned for its Arabica coffee, which is highly valued globally for its unique flavor profiles. The country produced approximately 7.3 million 60-kilogram bags of coffee in the 2020/2021 coffee year, making it the leading producer on the continent. Coffee is a critical part of Ethiopia's economy, contributing significantly to its export revenues and providing livelihoods for ",
+          "response_time_seconds": 2.75,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest data, Ethiopia remains the largest coffee producer in Africa. Ethiopia is not only the continent's largest producer but also the birthplace of coffee, specifically from the region of Kaffa. The country's production plays a significant role in its economy, with a significant portion of its population dependent on coffee farming.\n\nAccording to the International Coffee Organization (ICO), Ethiopia's coffee production for the 2020/2021 crop year was estimated at about 7.38 million 6",
+          "response_time_seconds": 4.47,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "The largest coffee producer in Africa is Ethiopia. According to the International Coffee Organization (ICO), Ethiopia is consistently ranked as the top coffee producer in Africa and one of the top coffee producers in the world. In 2020, Ethiopia produced approximately 7.1 million 60-kilogram bags of coffee, making it the largest coffee producer in Africa.",
+          "response_time_seconds": 1.83,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "category": "trade_facts",
+      "question": "What percentage of Rwanda's export earnings come from tea?",
+      "verified_answer": "Tea accounts for approximately 20-25% of Rwanda's agricultural export earnings",
+      "key_facts": [
+        "Rwanda",
+        "tea",
+        "export earnings",
+        "percentage"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "While the precise percentage of Rwanda's total export earnings derived from tea cannot be definitively calculated from the provided data, we can establish the current value of Rwanda's tea exports and its strategic importance to the national economy. Rwanda currently generates approximately USD 110 million annually from its tea exports. This figure is based on the country's ambition to significantly boost its tea export earnings to USD 200 million by 2027, indicating a strong focus on this agric",
+          "response_time_seconds": 180.72,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 3/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Tea is a significant export commodity for Rwanda. According to the National Agricultural Export Development Board (NAEB), tea accounted for approximately 17% of Rwanda's total export earnings in recent years. In the fiscal year 2020/2021, Rwanda's tea exports generated about USD 90.5 million, contributing significantly to the country's export revenue. The tea sector remains a critical component of Rwanda's agricultural export strategy, alongside coffee and other commodities. For the most current",
+          "response_time_seconds": 4.02,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 3/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, tea is one of Rwanda's major export commodities, contributing significantly to its economy. According to the National Agricultural Export Development Board (NAEB), tea accounted for approximately 15% of Rwanda's total export revenues in 2020. This percentage reflects the importance of tea in Rwanda's agricultural export sector, alongside other key commodities like coffee and minerals. The country has been focusing on increasing the quality and volume of its tea e",
+          "response_time_seconds": 6.32,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 3/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Tea is a significant export commodity for Rwanda. In 2020, tea accounted for about 25% of Rwanda's total export earnings. The National Agricultural Export Development Board (NAEB) plays a key role in promoting and facilitating the export of tea from Rwanda.",
+          "response_time_seconds": 1.59,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 2/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "category": "policy",
+      "question": "What is the EAC Common External Tariff rate on maize imports?",
+      "verified_answer": "The EAC Common External Tariff on maize is 50%",
+      "key_facts": [
+        "EAC",
+        "Common External Tariff",
+        "maize",
+        "50%"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Senior Economist at the East African Trade Institute, I can confirm that the standard East African Community (EAC) Common External Tariff (CET) rate on maize imports from countries outside the EAC bloc is **50% ad-valorem**. This rate is applied to imports originating from non-EAC member states, in line with the provisions of the EAC Customs Union.\n\nThe CET is a fundamental pillar of the EAC's regional integration agenda, designed to foster a common market by harmonizing import duties across ",
+          "response_time_seconds": 32.11,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 14,
+            "reasoning": "Matched 5/5 key terms, 14 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "The East African Community (EAC) Common External Tariff (CET) for maize imports is typically set at 50%. This rate is part of the EAC's efforts to protect local farmers from external competition while ensuring food security within the region. The CET is applied uniformly across EAC member states, which include Burundi, Kenya, Rwanda, South Sudan, Tanzania, and Uganda. The EAC periodically reviews its tariff rates, and any changes are published in official EAC documents and communicated through m",
+          "response_time_seconds": 3.32,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 6,
+            "reasoning": "Matched 5/5 key terms, 6 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of my last update in December 2023, the East African Community (EAC) Common External Tariff (CET) on maize imports is set at 10%. The EAC CET is structured to promote regional industrialization and protect intra-regional trade by applying tariffs based on the classification of goods into raw materials, intermediate goods, and finished goods. Maize, classified as a staple food, generally attracts a moderate tariff to balance between local agricultural support and food security concerns.\n\nHowev",
+          "response_time_seconds": 9.22,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 4,
+            "reasoning": "Matched 5/5 key terms, 4 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "As of my last update, the East African Community (EAC) Common External Tariff (CET) rate on maize imports is 50%. This rate applies to maize imported from countries outside the EAC member states (Burundi, Kenya, Rwanda, South Sudan, Tanzania, and Uganda). The EAC CET is designed to promote regional industrialization and economic development by harmonizing external tariffs among member states.\n\nYou can verify this information on the official website of the East African Community (EAC) or by refer",
+          "response_time_seconds": 1.55,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 5,
+            "reasoning": "Matched 5/5 key terms, 5 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "category": "macroeconomics",
+      "question": "What was Kenya's GDP growth rate in 2023?",
+      "verified_answer": "Kenya's GDP growth rate in 2023 was approximately 5.6%",
+      "key_facts": [
+        "Kenya",
+        "GDP",
+        "growth",
+        "2023",
+        "5.6%"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "Kenya's Gross Domestic Product (GDP) growth rate in 2023 demonstrated a robust performance, indicating an acceleration compared to the preceding year. According to Macrotrends, Kenya's GDP growth rate for 2023 was 5.56%, representing a 0.7% increase from the 4.86% recorded in 2022. A slightly higher figure is reported by Trading Economics, which indicates a full-year GDP growth of 5.70% for Kenya in 2023. This growth rate signifies a notable rebound and a positive trajectory for the East African",
+          "response_time_seconds": 32.01,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 6,
+            "reasoning": "Matched 5/5 key terms, 6 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "As of my last update in October 2023, the exact GDP growth rate for Kenya in 2023 had not been finalized or published. However, the World Bank and the International Monetary Fund (IMF) provide projections and estimates that can offer some guidance. According to the World Bank's Kenya Economic Update from April 2023, Kenya's GDP growth was projected to be around 5.0% for the year. Similarly, the IMF's World Economic Outlook from April 2023 projected a growth rate of approximately 5.3%. These figu",
+          "response_time_seconds": 3.05,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 4,
+            "reasoning": "Matched 5/5 key terms, 4 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of my last update in December 2023, the specific GDP growth rate for Kenya for the entire year of 2023 might not have been fully available yet, as such data typically requires comprehensive economic analysis and is often published after the year concludes. However, projections and estimates from various financial institutions such as the World Bank or the International Monetary Fund (IMF) can provide a close approximation.\n\nFor the most accurate and current data regarding Kenya's GDP growth r",
+          "response_time_seconds": 11.69,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 5,
+            "reasoning": "Matched 5/5 key terms, 5 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "As an AI language model, I cannot provide real-time data. However, you can find the most recent information on Kenya's GDP growth rate in 2023 by referring to the World Bank, International Monetary Fund (IMF), or the Kenya National Bureau of Statistics. These institutions regularly publish reports and data on economic indicators, including GDP growth rates for countries like Kenya.",
+          "response_time_seconds": 1.4,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "category": "trade_facts",
+      "question": "What is Ethiopia's annual coffee export volume in 60kg bags?",
+      "verified_answer": "Ethiopia exports approximately 6-7 million 60kg bags of coffee annually",
+      "key_facts": [
+        "Ethiopia",
+        "coffee",
+        "export volume",
+        "60kg bags",
+        "million"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Senior Economist at the East African Trade Institute, I can provide a comprehensive overview of Ethiopia's coffee export landscape, drawing upon the latest available data and projections.\n\nEthiopia's annual coffee export volume is projected to reach approximately **7.8 million 60-kg bags** for the 2025/26 marketing year. This represents a notable increase from the 7.0 million bags exported in the preceding period, underscoring an optimistic outlook for the sector. These projections align acro",
+          "response_time_seconds": 31.35,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 4/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Ethiopia is one of the largest coffee producers in Africa and has a significant presence in the global coffee market. According to the International Coffee Organization (ICO), Ethiopia's coffee export volume fluctuates annually due to various factors such as weather conditions, global coffee prices, and domestic policies. In recent years, Ethiopia has exported approximately 3.5 to 4 million 60kg bags of coffee annually. For the most precise and up-to-date figures, it is advisable to refer to the",
+          "response_time_seconds": 2.53,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 3/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, Ethiopia's coffee export volume for the 2022/2023 marketing year is projected to be about 4 million 60kg bags. This figure comes from the U.S. Department of Agriculture (USDA) in their Global Agricultural Information Network (GAIN) report. Ethiopia is one of the largest coffee producers in Africa and the birthplace of Arabica coffee. The country's coffee industry plays a crucial role in its economy, with a significant portion of its population dependent on coffee",
+          "response_time_seconds": 3.75,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 2/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Ethiopia is one of the largest coffee producers and exporters in the world. According to the International Coffee Organization (ICO), Ethiopia's annual coffee export volume is around 3.8 million 60kg bags. This makes Ethiopia the top coffee producer in Africa and one of the top coffee exporters globally.",
+          "response_time_seconds": 1.21,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 2/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "category": "institutions",
+      "question": "What does NAEB stand for and which country is it in?",
+      "verified_answer": "NAEB stands for National Agricultural Export Development Board and it is in Rwanda",
+      "key_facts": [
+        "NAEB",
+        "National Agricultural Export Development Board",
+        "Rwanda"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "NAEB stands for the National Agricultural Export Development Board, and it is located in Rwanda.",
+          "response_time_seconds": 3.21,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.6,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "NAEB stands for the National Agricultural Export Development Board, and it is located in Rwanda. The NAEB is responsible for promoting and developing agricultural exports in Rwanda, focusing on key commodities such as coffee, tea, and horticultural products. It plays a significant role in enhancing the competitiveness of Rwanda's agricultural sector in international markets.",
+          "response_time_seconds": 1.38,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "NAEB stands for the National Agricultural Export Development Board. It is an agency in Rwanda that is responsible for the development and promotion of the agricultural export sector in the country. NAEB focuses on increasing the volume and value of agricultural exports from Rwanda, particularly in commodities such as coffee, tea, and horticultural products.",
+          "response_time_seconds": 5.9,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "NAEB stands for the National Agricultural Export Development Board. It is an institution in Rwanda responsible for promoting and developing the country's agricultural exports.",
+          "response_time_seconds": 0.82,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "category": "trade_facts",
+      "question": "What is Kenya's main tea export destination?",
+      "verified_answer": "Pakistan is Kenya's largest tea export destination, receiving over 35% of Kenya's tea exports",
+      "key_facts": [
+        "Kenya",
+        "tea",
+        "export",
+        "Pakistan",
+        "largest destination"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Senior Economist at the East African Trade Institute, I can confirm that Pakistan stands as Kenya's primary tea export destination, consistently absorbing the largest share of the country's significant tea output. This dominance is evident across recent periods, underscoring Pakistan's critical role in Kenya's agricultural trade balance.\n\nIn 2024, Pakistan imported a substantial 206.27 million kilograms of Kenyan tea, representing 34.7% of the country's total tea export volume for that year. ",
+          "response_time_seconds": 29.36,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Kenya's main tea export destination is Pakistan. According to the Tea Directorate of Kenya, Pakistan has consistently been the largest importer of Kenyan tea. In 2020, Pakistan accounted for approximately 38% of Kenya's total tea exports. This strong trade relationship is driven by Pakistan's high demand for black tea, which is a staple beverage in the country. The Kenya Tea Development Agency (KTDA) and other stakeholders in the Kenyan tea industry continue to focus on strengthening this trade ",
+          "response_time_seconds": 2.19,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, Kenya's main export destination for tea is Pakistan. Pakistan has consistently been the largest buyer of Kenyan tea, importing a significant portion of Kenya's tea exports. The preference for Kenyan tea in Pakistan is largely due to its high quality, which is well-suited for blending with other teas to meet local taste preferences. The Tea Directorate of Kenya often provides detailed reports and statistics on tea exports, highlighting key markets and trends in th",
+          "response_time_seconds": 6.8,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Kenya's main tea export destination is Pakistan. According to the Tea Directorate of Kenya, Pakistan consistently ranks as the top destination for Kenyan tea exports. In recent years, Pakistan has been followed by Egypt, the UK, Afghanistan, and Sudan as key export markets for Kenyan tea. Kenya is one of the largest tea producers in the world and exports a significant portion of its tea production to various countries around the globe.",
+          "response_time_seconds": 1.39,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "category": "policy",
+      "question": "What is the EUDR and how does it affect East African coffee exporters?",
+      "verified_answer": "EUDR is the EU Deforestation Regulation requiring proof that commodities are not linked to deforestation. East African coffee exporters must provide geo-location data for farms.",
+      "key_facts": [
+        "EUDR",
+        "EU Deforestation Regulation",
+        "deforestation",
+        "geo-location",
+        "East Africa"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "The European Union Deforestation Regulation (EUDR) represents a significant shift in global trade policy, directly impacting commodity supply chains, including East African coffee exports. As Dr. Zeno, Senior Economist at the East African Trade Institute, I can elaborate on its implications.\n\nThe EUDR is a landmark regulation introduced by the European Union with the primary objective of curbing global deforestation and forest degradation. It mandates that companies placing certain commodities a",
+          "response_time_seconds": 30.2,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "The EUDR, or the European Union Deforestation Regulation, is a legislative measure aimed at curbing deforestation and forest degradation associated with the production of certain commodities, including coffee. The regulation requires companies to ensure that products sold in the EU are not linked to deforestation or forest degradation, directly or indirectly, after a specified cut-off date.\n\nFor East African coffee exporters, the EUDR presents both challenges and opportunities:\n\n1. **Compliance ",
+          "response_time_seconds": 7.41,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "The EUDR, or European Union Due Diligence Regulation, is a regulatory framework that aims to ensure that companies operating within the EU market conduct their business in a manner that adheres to certain ethical and sustainability standards, particularly concerning the sourcing of commodities like coffee. This regulation is part of the EU's broader efforts to promote sustainable trade practices and to mitigate the environmental and social impacts of commodity production in developing countries,",
+          "response_time_seconds": 15.36,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 4/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "The EUDR (European Union Domestic Roasting) is a policy that allows EU countries to roast imported green coffee beans without paying import duties. This policy has a significant impact on East African coffee exporters as it provides them with a competitive advantage in the EU market.\n\nBy exporting green coffee beans to the EU under the EUDR policy, East African coffee exporters can benefit from lower tariffs compared to exporting roasted coffee. This can help to increase the competitiveness of E",
+          "response_time_seconds": 2.87,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 4/5 key terms, 2 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "category": "macroeconomics",
+      "question": "What share of Ethiopia's export earnings does coffee represent?",
+      "verified_answer": "Coffee represents approximately 30-35% of Ethiopia's total export earnings",
+      "key_facts": [
+        "Ethiopia",
+        "coffee",
+        "export earnings",
+        "30-35%"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide an expert assessment of coffee's contribution to Ethiopia's export earnings, drawing upon the available web search results and my understanding of East African agricultural trade dynamics.\n\nWhile the provided web search results consistently highlight coffee as Ethiopia's principal revenue earner and primary export commodity, they do not offer a specific percentage representing its share of *total* national export ea",
+          "response_time_seconds": 29.53,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 3/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Coffee is a critical component of Ethiopia's export economy. According to the International Coffee Organization (ICO) and the Ethiopian Coffee and Tea Authority, coffee accounts for approximately 30% of Ethiopia's total export earnings. This figure underscores the importance of coffee to the Ethiopian economy, as it is the largest foreign exchange earner for the country. The coffee sector not only supports the livelihoods of millions of Ethiopians but also plays a significant role in the country",
+          "response_time_seconds": 2.48,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 3/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, coffee remains one of Ethiopia's most significant export commodities, contributing substantially to the country's foreign exchange earnings. According to the National Bank of Ethiopia's annual report for the fiscal year 2021/2022, coffee accounted for about 29.4% of Ethiopia\u2019s total commodity exports. This highlights the critical role that coffee plays in Ethiopia's economy, reflecting both its cultural significance and its economic importance as a primary export",
+          "response_time_seconds": 6.41,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 2/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Coffee is a significant export commodity for Ethiopia, representing a substantial share of the country's export earnings. In fact, coffee accounts for about 25% of Ethiopia's total export earnings. This makes coffee one of the most important export commodities for the country.\n\nThis information is supported by data from the International Coffee Organization (ICO) and the World Bank, which highlight the importance of coffee to Ethiopia's economy. The country is one of the largest coffee producers",
+          "response_time_seconds": 1.76,
+          "scores": {
+            "factual_accuracy_error_rate": 0.6,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 2/5 key terms, 2 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 11,
+      "category": "scenario",
+      "question": "If Kenya imposes a 20% export tax on raw coffee, what is the likely economic impact?",
+      "verified_answer": "A 20% export tax would reduce export competitiveness, lower farm gate prices for smallholders, potentially increase domestic processing, but risk losing market share to Ethiopia and Uganda",
+      "key_facts": [
+        "export tax",
+        "farm gate price",
+        "competitiveness",
+        "processing",
+        "market share"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "**Economic Policy Brief: Impact of a 20% Export Tax on Raw Coffee in Kenya**\n\n**Dr. Zeno, Policy Impact Economist**\n**Advising the East African Community and the World Bank**\n\n**BASELINE CONDITIONS**\n\nKenya's coffee sector, renowned for its high-quality Arabica beans, plays a significant role in the agricultural economy, though its global market share is relatively modest. For the marketing year (MY) 2024/25, the United States Department of Agriculture's Foreign Agricultural Service (FAS) Nairob",
+          "response_time_seconds": 80.24,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 5,
+            "reasoning": "Matched 5/5 key terms, 5 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Imposing a 20% export tax on raw coffee in Kenya could have several economic impacts, both domestically and internationally. Here are some potential effects:\n\n1. **Domestic Coffee Industry**: \n   - **Value Addition**: The export tax could incentivize local processing and value addition. By making raw coffee exports more expensive, the policy might encourage investment in domestic coffee processing facilities, potentially leading to increased employment and higher value-added exports.\n   - **Farm",
+          "response_time_seconds": 7.72,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 3,
+            "reasoning": "Matched 5/5 key terms, 3 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "Imposing a 20% export tax on raw coffee in Kenya would have several potential economic impacts, both domestically and internationally. Here\u2019s an analysis based on economic principles and the specific context of Kenya\u2019s coffee industry:\n\n1. **Increase in Domestic Prices**: The export tax might lead to an increase in the domestic supply of coffee as less is exported. This could potentially lower domestic prices if the local market cannot absorb the extra supply. However, the tax itself could also ",
+          "response_time_seconds": 46.91,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 4,
+            "reasoning": "Matched 5/5 key terms, 4 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Imposing a 20% export tax on raw coffee in Kenya is likely to have several economic impacts:\n\n1. **Reduced Export Revenue**: The export tax would increase the price of Kenyan coffee in the international market, making it less competitive compared to coffee from other countries. This could lead to a decrease in export revenue for Kenya's coffee industry.\n\n2. **Decreased Production Incentives**: Farmers may be discouraged from producing coffee due to lower potential profits resulting from the expo",
+          "response_time_seconds": 2.87,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 12,
+      "category": "trade_facts",
+      "question": "What is the name of Kenya's coffee auction system?",
+      "verified_answer": "The Nairobi Coffee Exchange (NCE) is Kenya's coffee auction system",
+      "key_facts": [
+        "Nairobi Coffee Exchange",
+        "NCE",
+        "auction",
+        "Kenya"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can confirm that Kenya's coffee auction system is known as the Nairobi Coffee Exchange (NCE). This information is not present in our local knowledge base but has been thoroughly corroborated through recent live web searches, which highlight the NCE's central role in the country's coffee trade.\n\nThe Nairobi Coffee Exchange serves as the primary marketplace for Kenyan coffee, facilitating the auction process that determines price",
+          "response_time_seconds": 27.41,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 6,
+            "reasoning": "Matched 5/5 key terms, 6 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Kenya's coffee auction system is known as the Nairobi Coffee Exchange (NCE). The NCE is a central platform where Kenyan coffee is auctioned, and it plays a crucial role in determining the prices of coffee in the country. The auction is held weekly and is managed by the Kenya Coffee Producers and Traders Association (KCPTA). The system is designed to ensure transparency and fair pricing for coffee producers in Kenya.",
+          "response_time_seconds": 2.54,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "Kenya's coffee auction system is known as the Nairobi Coffee Exchange (NCE). The NCE plays a crucial role in the trading of coffee, providing a transparent and competitive platform for the sale of coffee beans. This system allows various stakeholders, including producers, traders, and buyers, to engage in the trading process, which helps in determining the market prices based on quality and demand.",
+          "response_time_seconds": 5.37,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "The coffee auction system in Kenya is known as the Nairobi Coffee Exchange. This auction system plays a crucial role in the marketing and sale of Kenyan coffee, which is highly regarded for its quality and distinct flavor profiles. The Nairobi Coffee Exchange provides a platform for licensed coffee dealers to bid on lots of coffee from different regions in Kenya, helping to establish fair prices and facilitate trade within the coffee industry.",
+          "response_time_seconds": 1.42,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 4/5 key terms, 0 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 13,
+      "category": "institutions",
+      "question": "What does COMESA stand for?",
+      "verified_answer": "COMESA stands for Common Market for Eastern and Southern Africa",
+      "key_facts": [
+        "COMESA",
+        "Common Market",
+        "Eastern",
+        "Southern Africa"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "COMESA stands for the Common Market for Eastern and Southern Africa.",
+          "response_time_seconds": 1.25,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.6,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "COMESA stands for the Common Market for Eastern and Southern Africa. It is a regional economic community comprising 21 African member states, aimed at promoting economic integration through trade and investment. COMESA focuses on reducing trade barriers, harmonizing policies, and fostering cooperation among its members to enhance economic growth and development in the region.",
+          "response_time_seconds": 1.71,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "COMESA stands for the Common Market for Eastern and Southern Africa. It is a regional trade organization aimed at promoting economic integration among its member states, which include several countries in East and Southern Africa. The organization was established in December 1994, replacing the former Preferential Trade Area (PTA) which had existed since 1981. COMESA works to remove barriers to trade, improve investment opportunities, and enhance regional economic development through various pol",
+          "response_time_seconds": 7.68,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "COMESA stands for the Common Market for Eastern and Southern Africa. It is a regional economic community of 21 African countries that promotes economic integration and development in the region.",
+          "response_time_seconds": 1.37,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 14,
+      "category": "macroeconomics",
+      "question": "What is Uganda's main agricultural export commodity?",
+      "verified_answer": "Coffee is Uganda's main agricultural export commodity, accounting for over 20% of export earnings",
+      "key_facts": [
+        "Uganda",
+        "coffee",
+        "main export",
+        "agricultural"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "Uganda's primary agricultural export commodity is coffee. Historically, coffee has been the bedrock of Uganda's agricultural export economy, a position it maintained through the colonial era and into the early post-independence period of the 1960s and 1970s, where it dominated alongside cotton and tea. Even in recent times, coffee continues to be a significant contributor to the nation's export proceeds, as evidenced by its mention among key sectors supporting Uganda's robust economic performanc",
+          "response_time_seconds": 29.06,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Uganda's main agricultural export commodity is coffee. According to the International Coffee Organization (ICO), Uganda is one of the leading coffee producers in Africa, and coffee is a significant contributor to the country's export earnings. The Uganda Coffee Development Authority (UCDA) reported that in the fiscal year 2020/2021, Uganda exported approximately 6.08 million 60-kilogram bags of coffee, generating around USD 559 million in revenue. Coffee remains a critical component of Uganda's ",
+          "response_time_seconds": 1.87,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest data, Uganda's main agricultural export commodity is coffee. Coffee plays a crucial role in Uganda's economy, being the country's top-earning export product. According to the Uganda Coffee Development Authority (UCDA), Uganda is one of Africa's leading coffee producers, primarily exporting Robusta and Arabica varieties. The coffee industry significantly contributes to the livelihoods of many rural households and to the national economy at large.",
+          "response_time_seconds": 6.19,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "Uganda's main agricultural export commodity is coffee. Uganda is one of the top coffee producers in Africa, and coffee accounts for a significant portion of the country's export earnings. According to the Uganda Coffee Development Authority (UCDA), Uganda exported a total of 5.10 million 60-kilogram bags of coffee in the 2019/2020 financial year.\n\nOther important agricultural export commodities from Uganda include tea, fish and fish products, maize, and horticultural products.",
+          "response_time_seconds": 1.7,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 15,
+      "category": "trade_facts",
+      "question": "What was the global arabica coffee price range in 2024?",
+      "verified_answer": "Arabica coffee prices in 2024 ranged from approximately 180-320 US cents per pound due to tight Brazilian supply",
+      "key_facts": [
+        "arabica",
+        "price",
+        "2024",
+        "cents per pound",
+        "Brazil"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide an analysis of the global Arabica coffee price range in 2024, drawing upon the available market intelligence and my understanding of commodity dynamics. It is important to note that pinpointing an exact, universally agreed-upon range for a commodity like Arabica coffee across an entire year can be challenging due to varying contract specifications, market locations, and reporting methodologies. However, by synthesiz",
+          "response_time_seconds": 35.41,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 4/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "As of my last update in October 2023, I do not have access to future data, including the global arabica coffee price range for 2024. For the most accurate and up-to-date information, I recommend checking resources such as the International Coffee Organization (ICO), which regularly publishes reports and data on global coffee prices. Additionally, financial news services and commodity trading platforms often provide real-time updates on coffee prices.",
+          "response_time_seconds": 3.37,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "I'm sorry, but as of my last update in December 2023, I can't provide the global arabica coffee price range for the year 2024. For the most accurate and current data, I recommend checking resources such as the International Coffee Organization (ICO) or commodity market reports from financial news services. These sources regularly publish updated coffee price information, including specific details on arabica coffee.",
+          "response_time_seconds": 4.49,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 4/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "As of now, I cannot provide the exact price range for Arabica coffee in 2024 as it is a future date. However, you can refer to the International Coffee Organization (ICO) or other commodity market sources for historical data and projections on coffee prices. It's important to note that coffee prices can be influenced by various factors such as supply and demand dynamics, weather conditions, and global economic trends.",
+          "response_time_seconds": 1.35,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 16,
+      "category": "policy",
+      "question": "What is the African Continental Free Trade Area and when did it come into effect?",
+      "verified_answer": "The AfCFTA is a free trade agreement covering 54 African countries that came into effect January 1 2021",
+      "key_facts": [
+        "AfCFTA",
+        "African Continental Free Trade Area",
+        "54 countries",
+        "2021"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "The African Continental Free Trade Area (AfCFTA) represents a monumental step towards deeper economic integration across the African continent, establishing what is recognized as the world's largest free trade area by number of participating countries. Encompassing most of Africa, its primary objective is to create a single market for goods and services, facilitated by the progressive elimination of tariffs and non-tariff barriers among member states. This ambitious initiative aims to accelerate",
+          "response_time_seconds": 36.3,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "The African Continental Free Trade Area (AfCFTA) is a landmark trade agreement among African Union (AU) member states aimed at creating a single continental market for goods and services, with free movement of businesspersons and investments. The primary objective of the AfCFTA is to boost intra-African trade by reducing tariffs and non-tariff barriers, thereby fostering economic integration across the continent.\n\nThe AfCFTA came into effect on May 30, 2019, after the minimum threshold of 22 cou",
+          "response_time_seconds": 3.41,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "The African Continental Free Trade Area (AfCFTA) is a trade agreement aimed at creating a single market for goods and services, facilitated by movement of persons to deepen the economic integration of the African continent. The AfCFTA is the largest free trade area in the world in terms of the number of participating countries since the formation of the World Trade Organization.\n\nThe agreement was brokered by the African Union (AU) and was signed by 44 of its 55 member states in Kigali, Rwanda, ",
+          "response_time_seconds": 16.8,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "The African Continental Free Trade Area (AfCFTA) is a trade agreement among African Union (AU) member states aimed at creating a single market for goods and services across the continent. It was established on May 30, 2019, when the agreement entered into force after being ratified by the required number of AU member states.\n\nThe AfCFTA is the largest free trade area in the world by the number of participating countries, with 54 out of 55 AU member states having signed the agreement. It is expec",
+          "response_time_seconds": 1.84,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 5/5 key terms, 0 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 17,
+      "category": "trade_facts",
+      "question": "How many smallholder farmers are involved in Kenya's tea sector?",
+      "verified_answer": "Approximately 600,000 smallholder farmers are registered with the Kenya Tea Development Agency (KTDA)",
+      "key_facts": [
+        "600,000",
+        "smallholder",
+        "KTDA",
+        "Kenya",
+        "tea"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "Kenya's tea sector is significantly underpinned by the contributions of a vast network of smallholder farmers. Estimates indicate that approximately 650,000 smallholder farmers are actively involved in tea cultivation across the country. Other reports suggest this number could be even higher, exceeding 680,000 smallholder farmers. These farmers are crucial to the industry, cultivating about 49.3 percent of the total tea-growing land, with large tea producers managing the remaining 50.7 percent.\n",
+          "response_time_seconds": 32.99,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 4/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "As of the latest data, approximately 600,000 smallholder farmers are involved in Kenya's tea sector. These farmers are primarily organized under the Kenya Tea Development Agency (KTDA), which manages the production, processing, and marketing of tea for smallholders. The KTDA plays a crucial role in supporting these farmers by providing inputs, extension services, and access to markets. This information is supported by reports from the Food and Agriculture Organization (FAO) and the Tea Board of ",
+          "response_time_seconds": 2.02,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 3,
+            "reasoning": "Matched 5/5 key terms, 3 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, Kenya's tea sector involves a significant number of smallholder farmers. According to the Kenya Tea Development Agency (KTDA), which manages the majority of the smallholder tea production in Kenya, there are about 620,000 smallholder tea farmers who are actively engaged in tea farming under the KTDA management. These farmers are crucial to the tea industry in Kenya, as they contribute a substantial portion of the country's total tea production. The KTDA provides ",
+          "response_time_seconds": 14.04,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 3,
+            "reasoning": "Matched 3/5 key terms, 3 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "In Kenya, the tea sector is a significant contributor to the economy, with a large number of smallholder farmers involved in tea production. According to the Tea Board of Kenya, there are over 560,000 smallholder tea farmers in the country who cultivate tea on small plots of land. These smallholder farmers play a crucial role in the production and export of tea, which is one of Kenya's main cash crops and a major source of foreign exchange earnings.",
+          "response_time_seconds": 1.3,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.7,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 0,
+            "reasoning": "Matched 3/5 key terms, 0 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 18,
+      "category": "macroeconomics",
+      "question": "What is Tanzania's contribution to EAC GDP?",
+      "verified_answer": "Tanzania contributes approximately 25-30% of EAC total GDP making it one of the largest EAC economies",
+      "key_facts": [
+        "Tanzania",
+        "EAC",
+        "GDP",
+        "25-30%"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can provide an expert assessment of Tanzania's economic contribution within the East African Community (EAC), drawing upon the available data and my understanding of regional economic dynamics.\n\nBased on the latest projections from the International Monetary Fund (IMF) for 2026, Tanzania is poised to be a significant economic player within the EAC. While comprehensive GDP figures for all eight EAC member states (Burundi, Democr",
+          "response_time_seconds": 31.31,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 10,
+            "reasoning": "Matched 3/5 key terms, 10 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "Tanzania is a significant contributor to the East African Community (EAC) GDP. As of the latest data available, Tanzania's GDP was approximately USD 67.8 billion in 2021, according to the World Bank. The EAC, which includes Kenya, Uganda, Tanzania, Rwanda, Burundi, and South Sudan, had a combined GDP of around USD 193 billion in 2021.\n\nTanzania's contribution to the EAC GDP can be calculated as follows:\n\n\\[ \\text{Tanzania's Contribution} = \\left( \\frac{\\text{Tanzania's GDP}}{\\text{EAC's Total GD",
+          "response_time_seconds": 3.27,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 9,
+            "reasoning": "Matched 4/5 key terms, 9 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "As of the latest available data, Tanzania is a significant contributor to the GDP of the East African Community (EAC). According to the East African Community's statistics, Tanzania's GDP was estimated at about $64 billion in 2021. The total GDP of the EAC, which includes Kenya, Uganda, Rwanda, Burundi, South Sudan, and Tanzania, was approximately $243 billion in the same year.\n\nThis places Tanzania's contribution to the EAC's GDP at around 26%. This makes it one of the larger economies within t",
+          "response_time_seconds": 10.15,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 5,
+            "reasoning": "Matched 3/5 key terms, 5 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "As of 2020, Tanzania's contribution to the East African Community (EAC) GDP was approximately 28.8%. The EAC is made up of six member states: Burundi, Kenya, Rwanda, South Sudan, Tanzania, and Uganda. Tanzania is one of the largest economies in the EAC and plays a significant role in the region's economic activities.\n\n(Source: East African Community - www.eac.int)",
+          "response_time_seconds": 1.69,
+          "scores": {
+            "factual_accuracy_error_rate": 0.4,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 4,
+            "reasoning": "Matched 3/5 key terms, 4 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 19,
+      "category": "scenario",
+      "question": "What would happen to maize prices in Kenya if Uganda banned maize exports to Kenya?",
+      "verified_answer": "Kenyan domestic maize prices would rise 15-25% due to supply shortfall, affecting food security for urban poor and triggering NCPB reserve releases",
+      "key_facts": [
+        "maize",
+        "price increase",
+        "15-25%",
+        "supply shortfall",
+        "NCPB",
+        "food security"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "**ECONOMIC POLICY BRIEF: IMPLICATIONS OF A UGANDAN MAIZE EXPORT BAN ON KENYAN MAIZE PRICES**\n\n**Dr. Zeno, Policy Impact Economist**\n**Advising the East African Community and the World Bank**\n\n**BASELINE CONDITIONS**\n\nKenya's agricultural sector is fundamentally shaped by maize, which remains the dominant staple crop, both in terms of area cultivated and total production, as evidenced by the National Agriculture Production Reports for 2024 and 2025. This ubiquity means maize is consumed by the ma",
+          "response_time_seconds": 64.86,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 2,
+            "reasoning": "Matched 5/5 key terms, 2 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "If Uganda were to ban maize exports to Kenya, it would likely lead to an increase in maize prices in Kenya. Uganda is a significant supplier of maize to Kenya, and any disruption in this supply chain could create a shortage in the Kenyan market, driving prices up due to reduced availability.\n\nAccording to the Food and Agriculture Organization (FAO), Kenya relies on imports to meet its maize demand, with Uganda being one of the key sources. In 2020, for instance, Uganda exported approximately 600",
+          "response_time_seconds": 7.01,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 4,
+            "reasoning": "Matched 4/5 key terms, 4 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "If Uganda were to ban maize exports to Kenya, several economic impacts could be anticipated based on trade dynamics, regional production capacities, and historical trade data. Here\u2019s a detailed analysis:\n\n1. **Immediate Increase in Maize Prices in Kenya**: Uganda is one of Kenya's main sources of imported maize, contributing significantly to Kenya's maize supply, especially during periods of domestic shortfall. According to the East African Grain Council (EAGC), Uganda and Tanzania are key suppl",
+          "response_time_seconds": 16.53,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "If Uganda were to ban maize exports to Kenya, it would likely lead to an increase in maize prices in Kenya due to reduced supply. Kenya heavily relies on maize imports from Uganda to meet its domestic demand. In 2020, Uganda was the largest source of maize imports for Kenya, accounting for over 50% of total maize imports.\n\nA ban on maize exports from Uganda to Kenya would disrupt the supply chain and lead to a shortage of maize in the Kenyan market. This would result in increased competition amo",
+          "response_time_seconds": 2.14,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.3,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.1,
+            "key_facts_covered": 1,
+            "reasoning": "Matched 5/5 key terms, 1 citations found"
+          }
+        }
+      }
+    },
+    {
+      "id": 20,
+      "category": "institutions",
+      "question": "What is the role of the East African Community Secretariat in trade policy?",
+      "verified_answer": "The EAC Secretariat coordinates regional integration including the Customs Union, Common Market, monetary union progress, and harmonization of trade policies among 7 partner states",
+      "key_facts": [
+        "EAC Secretariat",
+        "Customs Union",
+        "Common Market",
+        "7 partner states",
+        "trade policy"
+      ],
+      "models": {
+        "Zeno Agent": {
+          "response": "As Dr. Zeno, Senior Economist at the East African Trade Institute, I can confirm that the provided local knowledge base, while insightful on topics such as electricity prices, petroleum supply, and county government finance in Kenya, does not contain specific information regarding the role of the East African Community (EAC) Secretariat in trade policy. Therefore, my analysis will draw primarily from the live web search results and my expert understanding of regional economic integration.\n\nThe E",
+          "response_time_seconds": 27.34,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 12,
+            "reasoning": "Matched 4/5 key terms, 12 citations found"
+          }
+        },
+        "GPT-4o": {
+          "response": "The East African Community (EAC) Secretariat plays a crucial role in formulating and coordinating trade policy among its member states, which include Burundi, Kenya, Rwanda, South Sudan, Tanzania, Uganda, and the Democratic Republic of the Congo. The Secretariat's responsibilities in trade policy encompass several key areas:\n\n1. **Policy Harmonization and Coordination**: The EAC Secretariat works to harmonize trade policies and regulations across member states to facilitate a seamless and effici",
+          "response_time_seconds": 4.95,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 10,
+            "reasoning": "Matched 4/5 key terms, 10 citations found"
+          }
+        },
+        "GPT-4-Turbo": {
+          "response": "The East African Community (EAC) Secretariat plays a crucial role in coordinating and facilitating trade policy among its member states. The EAC is a regional intergovernmental organization comprising Burundi, Kenya, Rwanda, South Sudan, Tanzania, Uganda, and the Democratic Republic of the Congo. The Secretariat, based in Arusha, Tanzania, is the executive organ of the EAC and is responsible for the implementation of the decisions made by the EAC's policy-making organs.\n\nThe role of the EAC Secr",
+          "response_time_seconds": 18.48,
+          "scores": {
+            "factual_accuracy_error_rate": 0.19999999999999996,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 12,
+            "reasoning": "Matched 4/5 key terms, 12 citations found"
+          }
+        },
+        "GPT-3.5-Turbo": {
+          "response": "The East African Community (EAC) Secretariat plays a crucial role in coordinating trade policy among its member states. The EAC Secretariat is responsible for implementing the EAC Common Market Protocol, which aims to create a single market within the region by removing trade barriers and harmonizing trade policies.\n\nSpecifically, the EAC Secretariat is involved in:\n\n1. **Trade Facilitation**: The EAC Secretariat works to simplify customs procedures, reduce non-tariff barriers, and harmonize tra",
+          "response_time_seconds": 2.61,
+          "scores": {
+            "factual_accuracy_error_rate": 0,
+            "citation_accuracy_error_rate": 0.1,
+            "hallucination_rate": 0.2,
+            "context_window_error_rate": 0.5,
+            "key_facts_covered": 11,
+            "reasoning": "Matched 5/5 key terms, 11 citations found"
+          }
+        }
+      }
+    }
+  ]
+}
