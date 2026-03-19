@@ -334,7 +334,7 @@ def generate_ethiopia_coffee_response() -> dict:
 def is_kenya_coffee_forecast_query(query: str) -> bool:
     pattern = re.compile(
         r".*price.*kenya.*coffee.*next.*2.*month[s]?.*|"
-        r".*kenya.*coffee.*price.*forecast.*(dec.*2025|jan.*2026).*|"
+        r".*kenya.*coffee.*price.*forecast.*(apr.*2025|may.*2026).*|"
         r".*kenya.*coffee.*next.*two.*months?.*|"
         r".*forecast.*kenya.*coffee.*price.*",
         re.IGNORECASE
@@ -352,9 +352,9 @@ def generate_kenya_coffee_response() -> dict:
         "input cost pressures and EUDR compliance challenges."
     )
     forecast_display = (
-        "December 2025: Average auction price forecasted at US$395 per 50 kg bag (US$7.90/kg), with a "
+        "April 2026: Average auction price forecasted at US$395 per 50 kg bag (US$7.90/kg), with a "
         "range of US$360-430 depending on weekly volumes and global futures momentum.\n\n"
-        "January 2026: Prices expected to ease slightly to US$385 per 50 kg bag (US$7.70/kg), range "
+        "May 2026: Prices expected to ease slightly to US$385 per 50 kg bag (US$7.70/kg), range "
         "US$350-410, as global supply pressures moderate and Colombian output recovers.\n\n"
         "Forecast Methodology: Aggregated from World Bank (+50% 2025 Arabica baseline, -15% 2026 "
         "correction), Trading Economics futures ($3.58/lb Jan 2026), ING quarterly outlook, and NCE "
@@ -362,7 +362,7 @@ def generate_kenya_coffee_response() -> dict:
         "(based on 36-month historical volatility)."
     )
     volume_chart = {
-        "x": ["Nov 2025", "Dec 2025", "Jan 2026"],
+        "x": ["Mar 2026", "Apr 2026", "May 2026"],
         "y": [26.5, 29.0, 31.0],
         "title": "NCE Weekly Auction Volume (Thousand 50kg bags)",
         "chart_type": "bar"
@@ -400,12 +400,12 @@ def generate_kenya_maize_response() -> dict:
         "farm gate margins."
     )
     forecast_display = (
-        "December 2025: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\n"
-        "January 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as "
+        "April 2026: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\n"
+        "May 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as "
         "main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets."
     )
     price_chart = {
-        "x": ["Nov 2025", "Dec 2025", "Jan 2026"],
+        "x": ["March 2026", "Apr 2026", "May 2026"],
         "y": [5350, 5150, 4950],
         "title": "Kenya Maize Retail Price Forecast (KSh per 90kg Bag)",
         "chart_type": "line"
@@ -514,7 +514,6 @@ async def query(request: Request):
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
-        # ── File only — no query ────────────────────────────────────────────
         if file_context and not user_query:
             prompt = f"""
 You are Dr. Zeno, Senior Economist. A user uploaded a document but didn't ask a specific question.

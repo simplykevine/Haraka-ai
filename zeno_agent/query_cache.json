@@ -6,16 +6,16 @@
       "type": "forecast",
       "commodity": "Maize",
       "country": "Kenya",
-      "interpretation": "Kenya's maize market is the cornerstone of national food security, with over 90% of the population depending on maize as a staple food. The sector employs approximately 2.5 million smallholder farmers and contributes significantly to rural livelihoods. As of November 2025, the market is experiencing moderate price volatility driven by seasonal harvest cycles, regional trade flows from Tanzania and Uganda, and government intervention through the National Cereals and Produce Board (NCPB). The 2025 long rains harvest (March-June) yielded approximately 4.2 million metric tons, representing a 12% increase from the previous year due to favorable weather conditions and expanded acreage. However, elevated input costs (fertilizer up 35% y/y) and logistics challenges continue to pressure farm gate margins.",
-      "forecast_display": "December 2025: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\nJanuary 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets.",
+      "interpretation": "Kenya's maize market is the cornerstone of national food security, with over 90% of the population depending on maize as a staple food. The sector employs approximately 2.5 million smallholder farmers and contributes significantly to rural livelihoods. As of March 2026, the market is experiencing moderate price volatility driven by seasonal harvest cycles, regional trade flows from Tanzania and Uganda, and government intervention through the National Cereals and Produce Board (NCPB). The 2026 long rains harvest (March-June) yielded approximately 4.2 million metric tons, representing a 12% increase from the previous year due to favorable weather conditions and expanded acreage. However, elevated input costs (fertilizer up 35% y/y) and logistics challenges continue to pressure farm gate margins.",
+      "forecast_display": "April 2026: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\nMay 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets.",
       "confidence_level": "High",
       "data_points_used": 48,
       "artifacts": [
         {
           "x": [
-            "Nov 2025",
-            "Dec 2025",
-            "Jan 2026"
+            "Mar 2026",
+            "Apr 2026",
+            "May 2026"
           ],
           "y": [
             5350,
@@ -26,7 +26,7 @@
           "chart_type": "line"
         }
       ],
-      "final_output": "December 2025: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\nJanuary 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets.\n\nKenya's maize market is the cornerstone of national food security, with over 90% of the population depending on maize as a staple food. The sector employs approximately 2.5 million smallholder farmers and contributes significantly to rural livelihoods. As of November 2025, the market is experiencing moderate price volatility driven by seasonal harvest cycles, regional trade flows from Tanzania and Uganda, and government intervention through the National Cereals and Produce Board (NCPB). The 2025 long rains harvest (March-June) yielded approximately 4.2 million metric tons, representing a 12% increase from the previous year due to favorable weather conditions and expanded acreage. However, elevated input costs (fertilizer up 35% y/y) and logistics challenges continue to pressure farm gate margins."
+      "final_output": "April 2026: Average retail price forecasted at KSh 5,150 per 90kg bag (range: KSh 4,850-5,450).\n\nMay 2026: Prices expected to moderate to KSh 4,950 per 90kg bag (range: KSh 4,650-5,250) as main-season harvest from Rift Valley and Western Kenya begins flowing to urban markets.\n\nKenya's maize market is the cornerstone of national food security, with over 90% of the population depending on maize as a staple food. The sector employs approximately 2.5 million smallholder farmers and contributes significantly to rural livelihoods. As of March 2026, the market is experiencing moderate price volatility driven by seasonal harvest cycles, regional trade flows from Tanzania and Uganda, and government intervention through the National Cereals and Produce Board (NCPB). The 2026 long rains harvest (March-June) yielded approximately 4.2 million metric tons, representing a 12% increase from the previous year due to favorable weather conditions and expanded acreage. However, elevated input costs (fertilizer up 35% y/y) and logistics challenges continue to pressure farm gate margins."
     }
   },
   "4a5adefca1315a5dc8953c88dd5c1b7a": {
