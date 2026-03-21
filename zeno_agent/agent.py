@@ -24,7 +24,7 @@ client = genai.Client(api_key=GOOGLE_API_KEY)
 GENERATION_MODEL = "models/gemini-2.5-flash"
 
 CACHE_FILE = os.path.join(os.path.dirname(__file__), "query_cache.json")
-CACHE_TTL_SECONDS = 60 * 60 * 24 * 7
+CACHE_TTL_SECONDS = 60 * 60 * 24 * 30
 
 
 def load_cache() -> dict:
