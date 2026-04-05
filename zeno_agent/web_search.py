@@ -18,7 +18,11 @@ def search_web(query: str, num_results: int = 4) -> List[Dict[str, str]]:
 
     try:
         from serpapi import GoogleSearch
+    except ImportError:
+        print("[WebSearch] serpapi module not installed. Run: pip install google-search-results")
+        return []
 
+    try:
         search = GoogleSearch({
             "q": query,
             "num": num_results,

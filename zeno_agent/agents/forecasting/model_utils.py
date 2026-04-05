@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from prophet import Prophet
-from typing import Tuple, Dict, Any
+from typing import Tuple, Dict, Any, List
+from datetime import datetime
 
 
 def prepare_prophet_df(df: pd.DataFrame, target_col: str) -> pd.DataFrame:
@@ -18,7 +19,7 @@ def run_model(
     df: pd.DataFrame,
     periods: int,
     metric_name: str = "unknown"
-) -> Tuple[np.ndarray, Dict[str, Any], str]:
+) -> Tuple[np.ndarray, Dict[str, Any], str, List[str]]:
     try:
         if df.empty or len(df) < 4:
             raise ValueError(f"Insufficient data for forecasting ({len(df)} points)")
@@ -38,13 +39,15 @@ def run_model(
         lower_bound = forecast["yhat_lower"].tail(periods).values
         upper_bound = forecast["yhat_upper"].tail(periods).values
 
+        future_dates = forecast["ds"].tail(periods).dt.strftime("%b %Y").tolist()
+
         intervals = {
             "lower": lower_bound.tolist(),
             "upper": upper_bound.tolist(),
             "mean": forecast_values.tolist()
         }
 
-        return forecast_values, intervals, "prophet"
+        return forecast_values, intervals, "prophet", future_dates
 
     except Exception as e:
         print(f"[Forecasting] Prophet failed for {metric_name}: {e}. Using linear fallback.")
@@ -59,10 +62,12 @@ def run_model(
             future_x = np.arange(len(df), len(df) + periods)
             forecast_values = slope * future_x + intercept
 
+        future_dates = [f"M{i+1}" for i in range(periods)]
+
         intervals = {
             "lower": (forecast_values * 0.9).tolist(),
             "upper": (forecast_values * 1.1).tolist(),
             "mean": forecast_values.tolist()
         }
 
-        return forecast_values, intervals, "linear_fallback"
+        return forecast_values, intervals, "linear_fallback", future_dates

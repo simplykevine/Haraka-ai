@@ -15,7 +15,7 @@ EXCHANGE_RATES = {
     "RWF": 0.00076,
 }
 
-SUPPORTED_COMMODITIES = ["dry maize", "green maize", "Coffee", "Tea", "Maize Flour"]
+SUPPORTED_COMMODITIES = ["dry maize", "green maize", "Coffee", "Tea", "Maize Flour", "beans", "oil"]
 SUPPORTED_METRICS = ["export_volume", "price", "revenue"]
 SUPPORTED_COUNTRIES = ["kenya", "ethiopia", "rwanda"]
 
@@ -30,4 +30,6 @@ ALIAS_MAP = {
     "coffee": "Coffee",
     "tea": "Tea",
     "maize flour": "Maize Flour",
+    "beans": "beans",
+    "oil": "oil",
 }

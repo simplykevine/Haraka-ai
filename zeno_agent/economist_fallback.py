@@ -2,6 +2,9 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from .web_search import search_web, format_web_results
+import numpy as np
+import json
+import re
 
 load_dotenv()
 
@@ -10,13 +13,88 @@ client = genai.Client(api_key=GOOGLE_API_KEY)
 GENERATION_MODEL = "models/gemini-2.5-flash"
 
 
+def extract_numeric_data_from_web(web_content: str, commodity: str, country: str) -> dict:
+    prompt = f"""Extract ALL numeric data from this web content about {commodity} prices and volumes in {country}.
+Return ONLY valid JSON with this exact structure:
+{{
+  "months": ["Jan 2024", "Feb 2024", "Mar 2024"],
+  "prices": [100, 105, 110],
+  "volumes": [50000, 52000, 55000]
+}}
+
+If you find partial data, include what you found. If no data exists, return empty arrays.
+Extract from any date ranges mentioned. Use the latest data available.
+
+Web Content:
+{web_content}
+
+Return ONLY the JSON, no other text."""
+
+    try:
+        response = client.models.generate_content(
+            model=GENERATION_MODEL,
+            contents=[{"parts": [{"text": prompt}]}],
+            config={"max_output_tokens": 256, "temperature": 0.1}
+        )
+        if response.candidates and response.candidates[0].content.parts:
+            text = response.candidates[0].content.parts[0].text
+            match = re.search(r'\{[\s\S]*\}', text)
+            if match:
+                try:
+                    return json.loads(match.group())
+                except json.JSONDecodeError:
+                    pass
+    except Exception as e:
+        print(f"[DataExtraction] LLM failed: {e}")
+    
+    return {"months": [], "prices": [], "volumes": []}
+
+
+def generate_forecast_from_data(data: dict, periods: int = 3) -> list:
+    prices = data.get("prices", [])
+    if len(prices) < 2:
+        return []
+    
+    try:
+        prices_arr = np.array(prices, dtype=float)
+        x = np.arange(len(prices_arr))
+        slope, intercept = np.polyfit(x, prices_arr, 1)
+        
+        future_x = np.arange(len(prices_arr), len(prices_arr) + periods)
+        forecast = slope * future_x + intercept
+        
+        return forecast.tolist()
+    except Exception as e:
+        print(f"[Forecast] Linear fit failed: {e}")
+        return []
+
+
+def create_chart_artifact(data: dict, forecast: list, commodity: str, country: str) -> dict:
+    months = data.get("months", [])
+    prices = data.get("prices", [])
+    
+    if not months or not prices:
+        return None
+    
+    forecast_months = [f"M{i+1}" for i in range(len(forecast))]
+    all_months = months + forecast_months
+    all_prices = prices + forecast
+    
+    return {
+        "x": all_months,
+        "y": all_prices,
+        "title": f"{commodity} Price Trend - {country}",
+        "chart_type": "line"
+    }
+
+
 def economist_web_answer(
     query: str,
     agent_type: str,
     commodity: str = "",
     country: str = "",
     extra_context: str = ""
-) -> str:
+) -> dict:
     """
     Called by any sub-agent when DB has no data or as primary answer engine.
     Searches web with multiple targeted queries and generates IMF/World Bank
@@ -56,7 +134,6 @@ def economist_web_answer(
             f"{query} policy implications Sub-Saharan Africa economist analysis",
         ]
 
-    # Run all search queries, collect unique results
     all_web_results = []
     seen_links = set()
     for sq in search_queries[:4]:
@@ -239,8 +316,32 @@ BEGIN POLICY BRIEF NOW:""".strip()
             }
         )
         if response.candidates and response.candidates[0].content.parts:
-            return response.candidates[0].content.parts[0].text.strip()
-        return "Dr. Zeno was unable to generate a response at this time. Please try again."
+            analysis_text = response.candidates[0].content.parts[0].text.strip()
+        else:
+            analysis_text = "Dr. Zeno was unable to generate a response at this time. Please try again."
     except Exception as e:
         print(f"[EconomistFallback] LLM failed: {e}")
-        return f"Unable to generate analysis at this time. Error: {type(e).__name__}"
+        analysis_text = f"Unable to generate analysis at this time. Error: {type(e).__name__}"
+
+    result = {
+        "type": agent_type,
+        "query": query,
+        "response": analysis_text,
+        "interpretation": analysis_text,
+        "forecast_display": analysis_text,
+        "confidence_level": "Medium" if has_web else "Low",
+        "data_points_used": len(all_web_results),
+        "source": "web_search" if has_web else "knowledge_base"
+    }
+
+    if agent_type == "forecast" and has_web and commodity and country:
+        data = extract_numeric_data_from_web(web_content, commodity, country)
+        if data.get("prices") and len(data.get("prices", [])) > 0:
+            forecast = generate_forecast_from_data(data, periods=3)
+            if forecast:
+                chart = create_chart_artifact(data, forecast, commodity, country)
+                if chart:
+                    result["artifacts"] = [chart]
+                    print(f"[Chart] Generated forecast chart for {commodity} in {country}")
+
+    return result

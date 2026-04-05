@@ -46,25 +46,63 @@ def save_cache(cache: dict):
 
 
 def make_cache_key(query: str, file_context: str = "") -> str:
+    """Create DETAILED cache key that includes specific parameters for forecast queries"""
     raw = f"{query.strip().lower()}|{file_context.strip().lower()}"
-    return hashlib.md5(raw.encode()).hexdigest()
+    
+    # Extract key parameters for forecast queries
+    months_match = re.search(r'(\d+)\s*months?', raw)
+    months_val = months_match.group(1) if months_match else "6"
+    
+    # Check if it's a year-based query
+    year_match = re.search(r'(last\s+year|past\s+year|over.*year)', raw)
+    if year_match:
+        months_val = "12"
+    
+    forecast_month_match = re.search(r'(january|february|march|april|may|june|july|august|september|october|november|december)', raw)
+    forecast_val = forecast_month_match.group(1)[:3] if forecast_month_match else "apr"
+    
+    # Include these in the hash for forecast queries
+    is_forecast = any(kw in raw for kw in ["market analysis", "price look", "maize", "oil", "beans", "corn"])
+    
+    if is_forecast:
+        detailed = f"{raw}|MONTHS:{months_val}|FORECAST:{forecast_val}"
+        print(f"[Cache] Forecast key params: {months_val} months, forecast to {forecast_val}")
+    else:
+        detailed = raw
+    
+    return hashlib.md5(detailed.encode()).hexdigest()
 
 
 def get_from_cache(query: str, file_context: str = "") -> dict | None:
+    """Get from cache - BUT skip for forecast queries (always generate fresh)"""
+    
+    # DISABLE cache for forecast/market analysis queries
+    if any(kw in query.lower() for kw in ["market analysis", "price look", "maize", "corn", "oil", "beans", "generate a graph"]):
+        print(f"[Cache] SKIPPED (forecast query - always generate fresh)")
+        return None
+    
     cache = load_cache()
     key = make_cache_key(query, file_context)
     entry = cache.get(key)
     if not entry:
+        print(f"[Cache] MISS - Key: {key[:16]}...")
         return None
     age = time.time() - entry.get("cached_at", 0)
     if age > CACHE_TTL_SECONDS:
-        print(f"[Cache] EXPIRED for: {query[:60]}")
+        print(f"[Cache] EXPIRED - Key: {key[:16]}... (age: {age/3600:.1f}h)")
         return None
-    print(f"[Cache] HIT for: {query[:60]}")
+    print(f"[Cache] HIT - Key: {key[:16]}...")
     return entry["result"]
 
 
 def set_in_cache(query: str, result: dict, file_context: str = ""):
+    """Set cache - BUT skip for forecast queries"""
+    
+    # DISABLE cache for forecast/market analysis queries
+    if any(kw in query.lower() for kw in ["market analysis", "price look", "maize", "corn", "oil", "beans", "generate a graph"]):
+        print(f"[Cache] SKIPPED (forecast query - not caching)")
+        return
+    
     cache = load_cache()
     key = make_cache_key(query, file_context)
     cache[key] = {
@@ -73,7 +111,7 @@ def set_in_cache(query: str, result: dict, file_context: str = ""):
         "result": result
     }
     save_cache(cache)
-    print(f"[Cache] SAVED for: {query[:60]}")
+    print(f"[Cache] SAVED - Key: {key[:16]}...")
 
 
 class JSONResponse(_BaseJSONResponse):
@@ -104,11 +142,19 @@ def normalize_response(result: dict) -> dict:
         text = result.get("response", result.get("llm_analysis", ""))
     elif query_type == "forecast":
         parts = []
-        if result.get("forecast_display"):
-            parts.append(result["forecast_display"])
+        
         if result.get("interpretation"):
-            parts.append(result["interpretation"])
+            parts.append(str(result["interpretation"]))
+        
+        if result.get("forecast_display"):
+            parts.append(f"FORECAST SUMMARY:\n{str(result['forecast_display'])}")
+        
+        if result.get("confidence_level"):
+            data_points = result.get("data_points_used", 0)
+            parts.append(f"Confidence Level: {result['confidence_level']} ({data_points} data points used)")
+        
         text = "\n\n".join(parts) if parts else ""
+    
     elif query_type in ("rag", "trivial", "file_analysis"):
         text = result.get("response", result.get("llm_analysis", ""))
     else:
@@ -120,7 +166,7 @@ def normalize_response(result: dict) -> dict:
             or ""
         )
 
-    result["final_output"] = text or "Dr. Zeno could not generate a response. Please try again."
+    result["final_output"] = str(text).strip() or "Dr. Zeno could not generate a response. Please try again."
     return result
 
 
@@ -241,14 +287,14 @@ Under 200 words. Output analysis only.""",
 
 @app.post("/dashboard/economist/analyze")
 async def economist_analyze(request: Request):
-    data = await request.json()
-    panel = data.get("panel", "supply_gap").lower()
-    user_query = data.get("query", "")
-
-    prompt_template = ECONOMIST_PROMPTS.get(panel, ECONOMIST_PROMPTS["supply_gap"])
-    prompt = prompt_template.format(query=user_query or "Provide a full analysis of this panel.")
-
     try:
+        data = await request.json()
+        panel = data.get("panel", "supply_gap").lower()
+        user_query = data.get("query", "")
+
+        prompt_template = ECONOMIST_PROMPTS.get(panel, ECONOMIST_PROMPTS["supply_gap"])
+        prompt = prompt_template.format(query=user_query or "Provide a full analysis of this panel.")
+
         result = client.models.generate_content(
             model=GENERATION_MODEL,
             contents=[{"parts": [{"text": prompt}]}],
@@ -269,7 +315,7 @@ async def economist_analyze(request: Request):
             ]
         })
     except Exception as e:
-        print(f"Economist analyze failed: {e}")
+        print(f"[EconomistAnalyze] Error: {e}")
         return JSONResponse({"error": f"Analysis failed: {str(e)}"}, status_code=500)
 
 
@@ -431,6 +477,21 @@ def route_and_reason(user_query: str) -> dict:
     if is_kenya_maize_forecast_query(user_query):
         return {"type": "kenya_maize_forecast", "response": ""}
 
+    q_lower = user_query.lower()
+    
+    market_analysis_keywords = [
+        "market analysis", "how prices", "price look", "price trend", 
+        "price change", "show me prices", "generate a graph", "visualize",
+        "oil", "beans", "soybean", "crude", "maize", "corn", "grain",
+        "last six months", "last 6 months", "last 10 months", "last 12 months",
+        "last month", "last 3 months", "past months", "project", "outlook", "forecast"
+    ]
+    is_market_analysis = any(kw in q_lower for kw in market_analysis_keywords)
+    
+    if is_market_analysis:
+        print(f"[Router] Market analysis detected - routing to forecast (CACHE DISABLED)")
+        return {"type": "forecast", "response": ""}
+
     prompt = f"""
 You are Zeno, an AI Economist Assistant specializing in East African agricultural trade data.
 Your task:
@@ -465,14 +526,15 @@ Query: "{user_query}"
             return {"type": "trivial", "response": raw_output}
 
     except Exception as e:
-        print(f"LLM routing call failed: {e}")
+        print(f"[LLM] Routing call failed: {e}")
         query = user_query.lower()
         trade_keywords = {
             "export", "import", "price", "trade", "coffee", "maize",
             "tanzania", "kenya", "forecast", "compare", "supply", "gap",
             "collision", "arbitrage", "logistics", "rainfall", "harvest",
             "farm gate", "simulate", "policy", "shock", "tariff", "effect",
-            "impact", "economy", "gdp", "inflation", "currency", "dollar"
+            "impact", "economy", "gdp", "inflation", "currency", "dollar",
+            "oil", "beans", "soybean", "graph", "visualize", "corn", "grain"
         }
         if len(query.split()) <= 6 and not any(kw in query for kw in trade_keywords):
             return {
@@ -492,29 +554,38 @@ async def query(request: Request):
         if not user_query and not file_context:
             return JSONResponse({"error": "Query or file is required"}, status_code=400)
 
-        # ── Cache check — return immediately if seen before ─────────────────
+        print(f"\n{'='*80}")
+        print(f"[Query] NEW REQUEST: {user_query[:80]}")
+        print(f"{'='*80}")
+
         cached = get_from_cache(user_query, file_context)
         if cached:
             cached["_from_cache"] = True
+            print(f"[Query] ✓ RETURNING CACHED RESULT\n")
             return JSONResponse(cached)
 
-        # ── Hardcoded forecast handlers ─────────────────────────────────────
+        print(f"[Query] → Generating fresh result...")
+
         if is_ethiopia_coffee_forecast_query(user_query):
+            print(f"[Query] Matched Ethiopia coffee forecast pattern")
             result = generate_ethiopia_coffee_response()
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
         if is_kenya_coffee_forecast_query(user_query):
+            print(f"[Query] Matched Kenya coffee forecast pattern")
             result = generate_kenya_coffee_response()
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
         if is_kenya_maize_forecast_query(user_query):
+            print(f"[Query] Matched Kenya maize forecast pattern")
             result = generate_kenya_maize_response()
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
         if file_context and not user_query:
+            print(f"[Query] File upload without query")
             prompt = f"""
 You are Dr. Zeno, Senior Economist. A user uploaded a document but didn't ask a specific question.
 Document Context: {file_context}
@@ -542,9 +613,10 @@ Instructions:
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
-        # ── Route query ─────────────────────────────────────────────────────
         routed = route_and_reason(user_query)
         query_type = routed.get("type", "rag")
+        
+        print(f"[Query] Routed to: {query_type}")
 
         if query_type == "trivial":
             result = normalize_response({"type": "trivial", "response": routed["response"]})
@@ -552,6 +624,7 @@ Instructions:
             return JSONResponse(result)
 
         elif query_type == "comparative":
+            print(f"[Query] Processing as comparative")
             result = normalize_response(comparative_agent.run({
                 "query": user_query,
                 "file_context": file_context
@@ -560,6 +633,7 @@ Instructions:
             return JSONResponse(result)
 
         elif query_type == "forecast":
+            print(f"[Query] Processing as forecast (NO CACHING)")
             try:
                 forecasting_agent = ForecastingAgent()
                 result = forecasting_agent.run({
@@ -567,8 +641,32 @@ Instructions:
                     "file_context": file_context
                 })
                 result["type"] = "forecast"
+                
+                # Extract chart data and update interpretation
+                if result.get("artifacts") and len(result["artifacts"]) > 0:
+                    chart = result["artifacts"][0]
+                    if chart.get("x") and chart.get("y"):
+                        x_labels = chart["x"]
+                        y_values = chart["y"]
+                        
+                        if len(y_values) >= 2:
+                            current_price = y_values[-2]
+                            forecast_price = y_values[-1]
+                            change_pct = ((forecast_price - current_price) / current_price * 100) if current_price > 0 else 0
+                            historical_count = len(y_values) - 1
+                            
+                            # Update forecast_display with ACTUAL data
+                            result["forecast_display"] = (
+                                f"Maize: Current ${current_price:.0f}/tonne → "
+                                f"${forecast_price:.0f}/tonne ({change_pct:+.1f}% {'rise' if change_pct > 0 else 'fall'})\n\n"
+                                f"Historical data: {historical_count} months | "
+                                f"Forecast target: {x_labels[-1] if x_labels else 'TBD'}"
+                            )
+                            result["data_points_used"] = len(y_values)
+                
                 result = normalize_response(result)
-                set_in_cache(user_query, result, file_context)
+                # ⚠️ DO NOT CACHE - always generate fresh
+                print(f"[Query] ✓ FORECAST COMPLETE (not cached)\n")
                 return JSONResponse(result)
             except ValueError as e:
                 if "No trade data found" in str(e):
@@ -580,12 +678,14 @@ Instructions:
                 raise
 
         elif query_type == "scenario":
+            print(f"[Query] Processing as scenario")
             result = normalize_response(ScenarioSubAgent().handle_with_context(user_query, file_context))
             result["type"] = "scenario"
             set_in_cache(user_query, result, file_context)
             return JSONResponse(result)
 
         else:
+            print(f"[Query] Processing as RAG")
             base_response = ask_knowledgebase_with_context(user_query, file_context)
             result = normalize_response({"type": "rag", "response": base_response})
             set_in_cache(user_query, result, file_context)
@@ -593,15 +693,47 @@ Instructions:
 
     except Exception as e:
         error_str = str(e)
+        print(f"[Query] ✗ EXCEPTION: {error_str}")
+        
         if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str or "quota" in error_str.lower():
             return JSONResponse({
                 "type": "quota_exceeded",
                 "final_output": "The system is temporarily busy due to high demand. Please try again in a moment.",
             })
-        print("ERROR in /query:", traceback.format_exc())
+        
+        print(f"[Query] Full traceback: {traceback.format_exc()}")
         return JSONResponse({"error": f"Processing failed: {str(e)}"}, status_code=500)
 
 
-@app.get("/healthz")
+@app.get("/cache/clear")
+def clear_cache():
+    """Clear all cached queries"""
+    try:
+        if os.path.exists(CACHE_FILE):
+            os.remove(CACHE_FILE)
+        print("[Cache] Cleared all cached queries")
+        return JSONResponse({"status": "Cache cleared successfully"})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
+
+
+@app.get("/cache/status")
+def cache_status():
+    """Show cache statistics"""
+    cache = load_cache()
+    return JSONResponse({
+        "total_cached_entries": len(cache),
+        "ttl_seconds": CACHE_TTL_SECONDS,
+        "note": "Forecast/market analysis queries are NOT cached (always fresh)",
+        "sample_entries": [{"key": k[:20] + "...", "query": v.get("query", "")[:50]} for k, v in list(cache.items())[:5]]
+    })
+
+
+@app.get("/health")
 def health():
-    return {"status": "ok"}
+    return JSONResponse({"status": "ok"})
+
+
+@app.get("/healthz")
+def healthz():
+    return JSONResponse({"status": "ok"})
