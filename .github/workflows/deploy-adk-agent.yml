@@ -52,7 +52,10 @@ jobs:
             --region=${{ env.REGION }} \
             --project=${{ env.PROJECT_ID }} \
             --allow-unauthenticated \
-            --memory=1Gi \
+            --memory=2Gi \
+            --cpu=2 \
+            --timeout=3600 \
+            --max-instances=5 \
             --set-env-vars="GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }},DATABASE_URL=${{ secrets.DATABASE_URL }},GOOGLE_GENAI_USE_VERTEXAI=FALSE"
 
       - name: Output Cloud Run URL
