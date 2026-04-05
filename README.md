@@ -42,7 +42,7 @@ Zeno is a multi agent for East African policy decision-support that helps econom
 
 ## 🎯 Project Overview
 
-**Haraka-ai** is a multi agentic AI for East African policy decision-support for economists in Kenya to help them make market forecasts, shocks analysis and comparing the market competition between regional markets, its  built on **Retrieval-Augmented Generation (RAG)** with **Google Gemini** and **FastAPI**.
+**Zeno-ai** is a multi agentic AI for East African policy decision-support for economists in Kenya to help them make market forecasts, shocks analysis and comparing the market competition between regional markets, its  built on **Retrieval-Augmented Generation (RAG)** with **Google Gemini** and **FastAPI**.
 
 The system provides:
 - 📊 **Accurate policy analysis** grounded in retrieved documents (55% citation accuracy vs 18% baseline)
@@ -50,7 +50,7 @@ The system provides:
 - 🔒 **Institutional auditability** with complete reasoning transparency and decision traceability
 - 🤝 **Sub-agent architecture** for specialized analysis (Scenario, Forecasting, Comparative)
 
-### Why Haraka?
+### Why Zeno?
 
 | Dimension | Zeno | GPT-4o | Advantage |
 |-----------|------|--------|-----------|
@@ -718,8 +718,8 @@ load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Haraka-ai",
-    description="Institutional-grade AI agent for East African policy decision-support",
+    title="Zeno-ai",
+    description="is a multi agentic AI for East African policy decision-support for economists in Kenya to help them make market forecasts, shocks analysis and comparing the market competition between regional markets",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
