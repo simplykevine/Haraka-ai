@@ -7,10 +7,11 @@
 [![PostgreSQL](https://img.shields.io/badge/postgresql-13%2B-blue.svg)](https://www.postgresql.org/)
 [![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
 
-> 🚀 Institutional-grade AI agent for East African policy decision-support with RAG, Gemini LLM, and real-time citations
+Zeno is a multi agent for East African policy decision-support that helps economists with market forecasting, policy analysis and risks assessment with RAG, Gemini LLM, and Postgres database
 
 **Live Demo:** https://haraka-frontend.vercel.app  
-**API Docs:** http://localhost:8080/docs (when running locally)  
+**AI Docs:** https://zeno-agent-1098049320580.europe-west1.run.app/docs
+**API Docs:** http://127.0.0.1:8000/swagger/ (when running locally)
 **Video Demo:** [Watch on Drive](https://drive.google.com/file/d/1lDBtvqLmfQXmTXnqtYvilXrClPpOm0Q2/view?usp=sharing)
 
 ---
@@ -1852,7 +1853,7 @@ For issues, feature requests, or questions:
 
 ---
 
-**Last Updated:** April 2, 2026  
+**Last Updated:** April 5, 2026  
 **Version:** 1.0.0  
 **Status:** Production Ready ✅
 
